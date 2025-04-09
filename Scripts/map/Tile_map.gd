@@ -14,3 +14,10 @@ func update_mouse_position(mouse_pos):
 		erase_cell(1,prev_mouse_pos)
 	prev_mouse_pos = mouse_pos
 	set_cell(1,mouse_pos,0,Vector2i(11,9))
+
+func _block(float durabilidad restante, Vector2i coords) -> float:
+	#ideas:
+	#que devuelva la vida restante del bloque seleccionado (usando esta)
+	#que haya una variable que devuelva la durabilidad del bloque seleccionado
+	
+	return 0.5

@@ -789,3 +789,6 @@ layer_1/name = "cursor"
 layer_1/z_index = 2
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_hydgk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
