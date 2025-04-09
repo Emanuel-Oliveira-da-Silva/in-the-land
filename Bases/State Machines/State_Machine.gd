@@ -48,3 +48,7 @@ func _unhandled_input(event):
 func _unhandled_key_input(event):
 	if current_state and current_state.has_method("unhandled_key_input"):
 		current_state.unhandled_key_input(event)
+
+func cursor_on_block():
+	if current_state and current_state.has_method("cursor_on_block"):
+		current_state.cursor_on_block()
