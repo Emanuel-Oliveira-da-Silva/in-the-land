@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=83 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
 [ext_resource type="Script" path="res://State Machines/Player/Walking.gd" id="5_pgwf0"]
 [ext_resource type="Script" path="res://State Machines/Player/Running.gd" id="6_8kfn4"]
+[ext_resource type="Script" path="res://State Machines/Player/Hand_Mine.gd" id="6_g4qdx"]
 [ext_resource type="Script" path="res://State Machines/Player/Jump.gd" id="7_qbvkg"]
 [ext_resource type="Script" path="res://State Machines/Player/Falling.gd" id="8_ilvt1"]
 [ext_resource type="Script" path="res://State Machines/Player/Landing.gd" id="9_qjdoe"]
@@ -869,7 +870,7 @@ libraries = {
 }
 
 [node name="Hand_State_Machine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("3_m2utd")]
-default_state = NodePath("Hand_Swing")
+default_state = NodePath("Hand_Idle")
 
 [node name="Hand_Idle" type="Node" parent="Hand_State_Machine"]
 script = ExtResource("10_qotq5")
@@ -878,6 +879,7 @@ script = ExtResource("10_qotq5")
 script = ExtResource("11_yt8ey")
 
 [node name="Mine" type="Node" parent="Hand_State_Machine"]
+script = ExtResource("6_g4qdx")
 
 [node name="Movement_State_Machine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("3_m2utd")]
 default_state = NodePath("Idle")

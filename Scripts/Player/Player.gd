@@ -39,8 +39,10 @@ func _physics_process(delta):
 func play_animation(animation : String):
 		$AnimationPlayer.play(animation)
 
-signal cursor_on_block()
+signal cursor_on_block(exists : bool)
 
 func update_cursor_on_block(exists : bool):
 	if exists:
-		cursor_on_block.emit()
+		cursor_on_block.emit(true)
+		return
+	cursor_on_block.emit(false)
