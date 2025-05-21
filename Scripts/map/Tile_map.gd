@@ -47,7 +47,7 @@ func scrape_block(data):
 			data["remaining_duration"] = block.get_custom_data("Hardness")
 		data["remaining_duration"] += -1
 		
-		#erase the block if the duration its below 0
+		#erase the block if the duration its below 0 and restart the remaining duration
 		if data["remaining_duration"] <= 0:
 			data["remaining_duration"] = null
 			erase_cell(0,prev_mouse_pos)

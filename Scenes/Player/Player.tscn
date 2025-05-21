@@ -902,4 +902,6 @@ script = ExtResource("8_ilvt1")
 [node name="Landing" type="Node" parent="Movement_State_Machine"]
 script = ExtResource("9_qjdoe")
 
+[node name="Inventory_State_Machine" type="Node" parent="."]
+
 [connection signal="cursor_on_block" from="." to="Hand_State_Machine" method="cursor_on_block"]

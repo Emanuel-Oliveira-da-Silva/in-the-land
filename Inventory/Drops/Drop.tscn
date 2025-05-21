@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxa0bw4amcaha"]
+
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_yq6vy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6of2o"]
+radius = 12.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
+mass = 0.01
+gravity_scale = 0.5
+can_sleep = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6of2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yq6vy")
+region_enabled = true
+region_rect = Rect2(31.99, -0.218906, 15.9274, 15.9208)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 0.3
+speed_scale = 0.2
+randomness = 1.0
+lifetime_randomness = 0.4
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+gravity = Vector2(0, -980)
+orbit_velocity_min = -0.3
+orbit_velocity_max = 0.3
+angle_min = -80.0
+angle_max = 80.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
