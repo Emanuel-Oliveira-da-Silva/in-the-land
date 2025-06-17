@@ -9,11 +9,11 @@ var inventoryslot : Inv_Slot
 func update():
 	if !inventoryslot || !inventoryslot.item: return
 	
-	item_sprite.texture = inventoryslot.item.texture
-	item_sprite.visible = true
+	$item.texture = inventoryslot.item.texture
+	$item.visible = true
 	
 	if inventoryslot.amount > 1:
-		label.visible = true
-		label.text = str(inventoryslot.amount)
+		$Label.visible = true
+		$Label.text = str(inventoryslot.amount)
 	else:
 		label.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=113 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_qbu3u"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://State Machines/Player/UI/Inventory_closed.gd" id="14_ylr40"]
 [ext_resource type="Script" path="res://State Machines/Player/UI/Pause_open.gd" id="15_1s8md"]
 [ext_resource type="PackedScene" uid="uid://cjmgju2k7kx4b" path="res://Inventory/inventory_UI.tscn" id="17_671f1"]
+[ext_resource type="PackedScene" uid="uid://bos7m72us7ng7" path="res://Inventory/hotbar.tscn" id="21_v452b"]
 
 [sub_resource type="Resource" id="Resource_byydd"]
 script = ExtResource("3_bvluy")
@@ -1015,13 +1016,20 @@ script = ExtResource("15_1s8md")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_v452b")]
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 351.0
+offset_bottom = 81.0
+
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_671f1")]
 visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
+offset_top = 86.0
 offset_right = 44.0
-offset_bottom = 28.0
+offset_bottom = 114.0
 grow_horizontal = 1
 grow_vertical = 1
 

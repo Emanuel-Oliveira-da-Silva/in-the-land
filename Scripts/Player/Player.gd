@@ -16,6 +16,7 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 #UI
 @onready var inventory_UI = $CanvasLayer/Inventory
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
+@onready var hotbar = $CanvasLayer/Hotbar
 
 
 #Resources

@@ -23,10 +23,13 @@ func remove_slot(inventorySlot : Inv_Slot):
 	if index < 0: return
 	
 	slots[index] = Inv_Slot.new()
+	updated.emit()
 
 func insert_slot(index : int, inv_Slot : Inv_Slot):
 	slots[index] = inv_Slot
+	updated.emit()
 
 func insert_items(slot : Inv_Slot):
 	for i in range(slot.amount):
 		insert(slot.item)
+	updated.emit()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d07c5jytsq2ud"]
+
+[ext_resource type="Script" path="res://Inventory/Slots/Slot_Hotbar.gd" id="1_damw8"]
+[ext_resource type="Texture2D" uid="uid://xt2gbafavyty" path="res://Assets/UI/Tiles/Large tiles/Thin outline/tile_0013.png" id="2_vx6vd"]
+
+[node name="Hotbar_Slot" type="Button"]
+custom_minimum_size = Vector2(62, 60)
+offset_right = 31.0
+offset_bottom = 30.0
+script = ExtResource("1_damw8")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.9375, 1.875)
+texture = ExtResource("2_vx6vd")
+centered = false
+
+[node name="Container" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(62, 60)
+layout_mode = 0
+offset_right = 31.0
+offset_bottom = 30.0

@@ -14,7 +14,7 @@ func physics_process(delta):
 func input(event):
 	if Input.is_action_pressed("ui_accept"):
 		state_machine.change_to("Jumping")
-	if not Input.get_axis("ui_left","ui_right") == 0:
+	if not Input.get_axis("left","right") == 0:
 		if Input.is_action_pressed("Shift"):
 			state_machine.change_to("Running")
 			return

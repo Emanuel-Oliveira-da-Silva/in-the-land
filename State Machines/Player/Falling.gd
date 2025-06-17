@@ -12,8 +12,8 @@ func physics_process(delta):
 	controlled_node.move_and_slide()
 
 func process(delta):
-	if Input.get_axis("ui_left","ui_right") != 0:
-		controlled_node.velocity.x += Input.get_axis("ui_left","ui_right") * 5
+	if Input.get_axis("left","right") != 0:
+		controlled_node.velocity.x += Input.get_axis("left","right") * 5
 
 
 func handle_gravity(delta):

@@ -15,7 +15,7 @@ script = ExtResource("1_6m40y")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.313726)
-custom_minimum_size = Vector2(374, 296)
+custom_minimum_size = Vector2(374, 210)
 layout_mode = 1
 offset_right = 187.0
 offset_bottom = 148.0
@@ -41,21 +41,6 @@ offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
-
-[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
-layout_mode = 2
-
-[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
-layout_mode = 2
-
-[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
-layout_mode = 2
-
-[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
-layout_mode = 2
-
-[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
-layout_mode = 2
 
 [node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_3tl1u")]
 layout_mode = 2
