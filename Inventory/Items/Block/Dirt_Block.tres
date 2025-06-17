@@ -14,3 +14,4 @@ Source_ID = 0
 Atlas_coord = Vector2i(0, 0)
 name = "Dirt Block"
 texture = SubResource("AtlasTexture_53103")
+stack = 10

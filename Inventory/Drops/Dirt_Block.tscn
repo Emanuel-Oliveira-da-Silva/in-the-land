@@ -1,22 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxa0bw4amcaha"]
+[gd_scene load_steps=8 format=3 uid="uid://l11g557p4ji4"]
 
-[ext_resource type="Script" path="res://Inventory/Drops/Drop.gd" id="1_l4vg7"]
-[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_yq6vy"]
-[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="2_21icd"]
+[ext_resource type="Script" path="res://Inventory/Drops/Drop.gd" id="1_5gumq"]
+[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="2_6hu12"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="2_ilega"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_pau5s"]
+
+[sub_resource type="Resource" id="Resource_juvb2"]
+script = ExtResource("3_pau5s")
+item = ExtResource("2_6hu12")
+amount = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of2o"]
-radius = 12.0
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sanj"]
-radius = 15.0
+radius = 25.0
 
 [node name="RigidBody2D" type="RigidBody2D"]
 scale = Vector2(0.02, 0.02)
 collision_layer = 4
 mass = 0.01
 gravity_scale = 0.5
-script = ExtResource("1_l4vg7")
-itemRes = ExtResource("2_21icd")
+script = ExtResource("1_5gumq")
+slotRes = SubResource("Resource_juvb2")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 lifetime = 0.3
@@ -41,7 +47,7 @@ shape = SubResource("CircleShape2D_6of2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_yq6vy")
+texture = ExtResource("2_ilega")
 region_enabled = true
 region_rect = Rect2(31.99, -0.218906, 15.9274, 15.9208)
 region_filter_clip_enabled = true

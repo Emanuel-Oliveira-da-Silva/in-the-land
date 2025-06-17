@@ -8,6 +8,8 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 #State Machines:
 @onready var movement_state_machine = $Movement_State_Machine
 @onready var hand_state_machine = $Hand_State_Machine
+@onready var ui_state_machine = $UI_State_Machine
+
 
 @onready var tilemap : Tile_Map = $"../TileMap"
 
@@ -28,6 +30,7 @@ func _process(delta):
 	
 	movement_state_machine.process(delta)
 	hand_state_machine.process(delta)
+	ui_state_machine.process(delta)
 
 func set_facing_direction(x : float):
 	if abs(x) > 0:
@@ -39,10 +42,12 @@ func is_facing_right() -> bool:
 func _unhandled_input(event):
 	movement_state_machine.input(event)
 	hand_state_machine.input(event)
+	ui_state_machine.input(event)
 
 func _physics_process(delta):
 	movement_state_machine.physics_process(delta)
 	hand_state_machine.physics_process(delta)
+	ui_state_machine.physics_process(delta)
 
 func play_animation(animation : String):
 		$AnimationPlayer.play(animation)
@@ -56,6 +61,6 @@ func update_cursor_on_block(exists : bool):
 	cursor_on_block.emit(false)
 
 
-func pick_up(item : Inv_Item):
-	inventory.insert(item)
-	print("AGARRE UN " + item.name)
+func pick_up(slot : Inv_Slot):
+	inventory.insert_items(slot)
+	print("AGARRE UN " + slot.item.name)
