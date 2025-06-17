@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxa0bw4amcaha"]
+[gd_scene load_steps=5 format=3 uid="uid://bxa0bw4amcaha"]
 
+[ext_resource type="Script" path="res://Inventory/Drops/Drop.gd" id="1_l4vg7"]
 [ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_yq6vy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of2o"]
 radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sanj"]
+radius = 15.0
 
 [node name="RigidBody2D" type="RigidBody2D"]
 scale = Vector2(0.2, 0.2)
 mass = 0.01
 gravity_scale = 0.5
 can_sleep = false
+script = ExtResource("1_l4vg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6of2o")
@@ -34,3 +39,12 @@ angle_min = -80.0
 angle_max = 80.0
 scale_amount_min = 0.5
 scale_amount_max = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5sanj")
+
+[connection signal="body_entered" from="Area2D" to="." method="Body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=85 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://State Machines/Player/Landing.gd" id="9_qjdoe"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle_hand.gd" id="10_qotq5"]
 [ext_resource type="Script" path="res://State Machines/Player/Swing_hand.gd" id="11_yt8ey"]
+[ext_resource type="PackedScene" uid="uid://cjmgju2k7kx4b" path="res://Inventory/Inventories/inventory_UI.tscn" id="13_po8lm"]
+[ext_resource type="PackedScene" uid="uid://c5f5j0nbu5p0h" path="res://UI/Pause_menu/pause_menu.tscn" id="14_eevnp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlh36"]
 atlas = ExtResource("2_v1heh")
@@ -853,6 +855,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_tak2d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -902,6 +905,19 @@ script = ExtResource("8_ilvt1")
 [node name="Landing" type="Node" parent="Movement_State_Machine"]
 script = ExtResource("9_qjdoe")
 
-[node name="Inventory_State_Machine" type="Node" parent="."]
+[node name="GUI_State_Machine" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("13_po8lm")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 44.0
+offset_bottom = 28.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_eevnp")]
 
 [connection signal="cursor_on_block" from="." to="Hand_State_Machine" method="cursor_on_block"]

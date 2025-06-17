@@ -46,3 +46,7 @@ func update_cursor_on_block(exists : bool):
 		cursor_on_block.emit(true)
 		return
 	cursor_on_block.emit(false)
+
+
+func pick_up(item : String):
+	print("AGARRE UN " + item)

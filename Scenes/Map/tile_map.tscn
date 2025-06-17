@@ -775,7 +775,7 @@ texture = ExtResource("1_gyfom")
 resource_name = "Bloques especiales"
 
 [sub_resource type="TileSet" id="TileSet_n4qpm"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
 custom_data_layer_0/name = "Hardness"
 custom_data_layer_0/type = 3
 sources/0 = SubResource("TileSetAtlasSource_ggggr")
