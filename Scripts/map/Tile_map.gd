@@ -51,3 +51,11 @@ func scrape_block(data):
 		if data["remaining_duration"] <= 0:
 			data["remaining_duration"] = null
 			erase_cell(0,prev_mouse_pos)
+			var new_drop = block.get_custom_data("Drop").duplicate()
+			if new_drop:
+				var drop = new_drop.instantiate()
+				drop.slotRes = drop.slotRes.duplicate()
+				var amount = block.get_custom_data("Amount")
+				drop.slotRes.amount = amount
+				add_sibling(drop)
+				drop.global_position = map_to_local(prev_mouse_pos)

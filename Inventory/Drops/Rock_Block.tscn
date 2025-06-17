@@ -21,6 +21,7 @@ scale = Vector2(0.02, 0.02)
 collision_layer = 4
 mass = 0.01
 gravity_scale = 0.5
+can_sleep = false
 script = ExtResource("1_wvr2q")
 slotRes = SubResource("Resource_veaqm")
 

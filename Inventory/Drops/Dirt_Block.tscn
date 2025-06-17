@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_juvb2"]
 script = ExtResource("3_pau5s")
 item = ExtResource("2_6hu12")
-amount = 8
+amount = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6of2o"]
 radius = 20.0
@@ -18,9 +18,11 @@ radius = 25.0
 
 [node name="RigidBody2D" type="RigidBody2D"]
 scale = Vector2(0.02, 0.02)
-collision_layer = 4
+collision_layer = 5
+collision_mask = 5
 mass = 0.01
 gravity_scale = 0.5
+can_sleep = false
 script = ExtResource("1_5gumq")
 slotRes = SubResource("Resource_juvb2")
 
@@ -54,10 +56,18 @@ region_filter_clip_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 6
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_5sanj")
 
-[connection signal="body_entered" from="Area2D" to="." method="Body_entered"]
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -27.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

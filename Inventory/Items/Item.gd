@@ -3,4 +3,4 @@ class_name Inv_Item
 
 @export var name : String = ""
 @export var texture : AtlasTexture
-@export var stack : int 
+@export var stack : int
