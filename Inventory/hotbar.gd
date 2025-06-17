@@ -32,11 +32,9 @@ func selector_to_index(index: int):
 	selector.global_position = slots[index].global_position
 
 func move_selector_to_right():
-	print("A")
 	equipped_item_index = (equipped_item_index + 1) % slots.size()
 	selector.global_position = slots[equipped_item_index].global_position
 
 func move_selector_to_left():
-	print("E")
 	equipped_item_index = (equipped_item_index - 1 + slots.size()) % slots.size()
 	selector.global_position = slots[equipped_item_index].global_position

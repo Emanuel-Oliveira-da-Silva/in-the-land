@@ -11,7 +11,7 @@ filter_clip = true
 [resource]
 script = ExtResource("1_0wtde")
 Source_ID = 0
-Atlas_coord = Vector2i(0, 0)
+Atlas_coord = Vector2i(2, 0)
 name = "Dirt Block"
 texture = SubResource("AtlasTexture_53103")
 stack = 10

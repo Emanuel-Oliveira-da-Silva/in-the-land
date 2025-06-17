@@ -31,7 +31,6 @@ func has_block_on_cursor():
 		cursor_on_block.emit(false)
 		emited = true
 
-
 var last_block
 
 func scrape_block(data):
@@ -59,3 +58,8 @@ func scrape_block(data):
 				drop.slotRes.amount = amount
 				add_sibling(drop)
 				drop.global_position = map_to_local(prev_mouse_pos)
+
+func place_block(source_id : int, atlas_coords : Vector2i):
+	if get_cell_tile_data(0,prev_mouse_pos): return
+	
+	set_cell(0,prev_mouse_pos,source_id,atlas_coords)
