@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmrap2h5tbdui"]
+
+[ext_resource type="Script" path="res://Inventory/panel_UI.gd" id="1_7ovy4"]
+[ext_resource type="FontFile" uid="uid://dt83faj5qwq15" path="res://Assets/Fonts/ByteBounce.ttf" id="1_q1pkt"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_7ovy4")
+
+[node name="item" type="Sprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_right = 23.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.462291, 0.462291, 0.462291, 1)
+theme_override_fonts/font = ExtResource("1_q1pkt")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 2

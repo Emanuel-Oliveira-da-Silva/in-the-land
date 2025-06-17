@@ -1,16 +1,9 @@
 extends Button
 
-@onready var item_sprite = $CenterContainer/Panel/item
-@onready var label = $CenterContainer/Panel/Label
+@onready var center_container = $CenterContainer
 
+var item_stack_ui : Item_Stack_UI
 
-func update(slot: Inv_Slot):
-	if slot.item:
-		item_sprite.visible = true
-		item_sprite.texture = slot.item.texture
-		if slot.amount > 1:
-			label.visible = true
-			label.text = str(slot.amount)
-	else:
-		label.visible = false
-		item_sprite.visible = false
+func insert(isg : Item_Stack_UI):
+	item_stack_ui = isg
+	center_container.add_child(item_stack_ui)
