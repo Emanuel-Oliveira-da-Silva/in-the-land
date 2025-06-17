@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=114 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_qbu3u"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://State Machines/Player/Jump.gd" id="7_qbvkg"]
 [ext_resource type="Script" path="res://State Machines/Player/Falling.gd" id="8_ilvt1"]
 [ext_resource type="Script" path="res://State Machines/Player/Landing.gd" id="9_qjdoe"]
+[ext_resource type="Script" path="res://State Machines/Player/Use_hand.gd" id="10_ap62c"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle_hand.gd" id="10_qotq5"]
 [ext_resource type="Script" path="res://State Machines/Player/Swing_hand.gd" id="11_yt8ey"]
 [ext_resource type="Script" path="res://State Machines/Player/UI/Inventory_open.gd" id="13_2888s"]
@@ -980,6 +981,9 @@ script = ExtResource("11_yt8ey")
 
 [node name="Mine" type="Node" parent="Hand_State_Machine"]
 script = ExtResource("6_g4qdx")
+
+[node name="Use" type="Node" parent="Hand_State_Machine"]
+script = ExtResource("10_ap62c")
 
 [node name="Movement_State_Machine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("3_m2utd")]
 default_state = NodePath("Idle")

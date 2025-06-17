@@ -4,6 +4,8 @@ func start():
 	controlled_node.hotbar.visible = true
 	controlled_node.inventory_UI.locked = true
 
+var frame = false
+
 func unhandled_input(event):
 	if Input.is_action_just_pressed("Inventory"):
 		controlled_node.inventory_UI.visible = true
@@ -13,6 +15,26 @@ func unhandled_input(event):
 		controlled_node.hotbar.visible = false
 		controlled_node.pause_menu.visible = true
 		state_machine.change_to("Pause_open")
+	
+	
+	for i in range(5):
+		if Input.is_action_just_pressed("Hotbar %d" % (i+1)):
+			controlled_node.hotbar.selector_to_index(i)
+			break
+		
+	if Input.is_action_just_pressed("mouse_scroll_up"):
+		if frame:
+			frame = false
+			controlled_node.hotbar.move_selector_to_right()
+			return
+		frame = true
+		
+	if Input.is_action_just_pressed("Mouse_scroll_down"):
+		if frame:
+			frame = false
+			controlled_node.hotbar.move_selector_to_left()
+			return
+		frame = true
 
 func end():
 	controlled_node.inventory_UI.locked = false

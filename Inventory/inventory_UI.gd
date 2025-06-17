@@ -5,7 +5,7 @@ class_name Inventory_UI
 @onready var inventory : Inventory =  self.owner.inventory
 
 @onready var ItemStackUIClass = preload("res://Inventory/panel_UI.tscn")
-@onready var hotbar_slots : Array = $"../Hotbar".get_children()
+@onready var hotbar_slots : Array = $"../Hotbar".slots
 @onready var slots : Array = hotbar_slots + $NinePatchRect/GridContainer.get_children()
 
 var item_in_hand : Item_Stack_UI
