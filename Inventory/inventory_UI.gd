@@ -6,7 +6,7 @@ extends Control
 @onready var slots : Array = $NinePatchRect/GridContainer.get_children()
 
 func _ready():
-	inventory.updated.connect(update())
+	inventory.updated.connect(update)
 	update()
 
 func update():

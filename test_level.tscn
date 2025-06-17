@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmwa3emyajfxb"]
+[gd_scene load_steps=6 format=3 uid="uid://dmwa3emyajfxb"]
 
 [ext_resource type="PackedScene" uid="uid://duq5pqriqt1xe" path="res://Scenes/Player/Player.tscn" id="2_h2yb2"]
+[ext_resource type="Resource" uid="uid://57kl0ygdm52j" path="res://Inventory/Inventories/Player_inventory.tres" id="2_hoctu"]
 [ext_resource type="Script" path="res://Label.gd" id="2_u4d02"]
 [ext_resource type="PackedScene" uid="uid://o3ra0dm2jbyu" path="res://Scenes/Map/tile_map.tscn" id="3_jtwba"]
 [ext_resource type="PackedScene" uid="uid://bxa0bw4amcaha" path="res://Inventory/Drops/Drop.tscn" id="4_6hjqd"]
@@ -9,6 +10,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_h2yb2")]
 position = Vector2(497, 125)
+inventory = ExtResource("2_hoctu")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
