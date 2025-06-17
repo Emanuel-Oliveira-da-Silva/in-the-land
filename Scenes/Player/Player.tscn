@@ -1,6 +1,7 @@
-[gd_scene load_steps=85 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=89 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
+[ext_resource type="Resource" uid="uid://dhnt4b58rspfx" path="res://Inventory/Inventories/Player_inventory.tres" id="2_jd7m0"]
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
 [ext_resource type="PackedScene" uid="uid://o2h67bx0dmp3" path="res://Bases/State Machines/state_machine.tscn" id="3_m2utd"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
@@ -12,8 +13,11 @@
 [ext_resource type="Script" path="res://State Machines/Player/Landing.gd" id="9_qjdoe"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle_hand.gd" id="10_qotq5"]
 [ext_resource type="Script" path="res://State Machines/Player/Swing_hand.gd" id="11_yt8ey"]
-[ext_resource type="PackedScene" uid="uid://cjmgju2k7kx4b" path="res://Inventory/Inventories/inventory_UI.tscn" id="13_po8lm"]
+[ext_resource type="Script" path="res://State Machines/Player/UI/Inventory_open.gd" id="13_2888s"]
 [ext_resource type="PackedScene" uid="uid://c5f5j0nbu5p0h" path="res://UI/Pause_menu/pause_menu.tscn" id="14_eevnp"]
+[ext_resource type="Script" path="res://State Machines/Player/UI/Inventory_closed.gd" id="14_ylr40"]
+[ext_resource type="Script" path="res://State Machines/Player/UI/Pause_open.gd" id="15_1s8md"]
+[ext_resource type="PackedScene" uid="uid://cjmgju2k7kx4b" path="res://Inventory/inventory_UI.tscn" id="17_671f1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlh36"]
 atlas = ExtResource("2_v1heh")
@@ -855,8 +859,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_tak2d")
+inventory = ExtResource("2_jd7m0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3u4rw")
@@ -905,11 +910,22 @@ script = ExtResource("8_ilvt1")
 [node name="Landing" type="Node" parent="Movement_State_Machine"]
 script = ExtResource("9_qjdoe")
 
-[node name="GUI_State_Machine" type="Node" parent="."]
+[node name="UI_State_Machine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("3_m2utd")]
+default_state = NodePath("Inventory_closed")
+
+[node name="Inventory_closed" type="Node" parent="UI_State_Machine"]
+script = ExtResource("14_ylr40")
+
+[node name="Inventory_open" type="Node" parent="UI_State_Machine"]
+script = ExtResource("13_2888s")
+
+[node name="Pause_open" type="Node" parent="UI_State_Machine"]
+script = ExtResource("15_1s8md")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("13_po8lm")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_671f1")]
+visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -919,5 +935,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_eevnp")]
+visible = false
 
 [connection signal="cursor_on_block" from="." to="Hand_State_Machine" method="cursor_on_block"]

@@ -11,6 +11,14 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 
 @onready var tilemap : Tile_Map = $"../TileMap"
 
+#UI
+@onready var inventory_UI = $CanvasLayer/Inventory
+@onready var pause_menu = $"CanvasLayer/Pause Menu"
+
+
+#Resources
+@export var inventory : Inventory
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -48,5 +56,6 @@ func update_cursor_on_block(exists : bool):
 	cursor_on_block.emit(false)
 
 
-func pick_up(item : String):
-	print("AGARRE UN " + item)
+func pick_up(item : Inv_Item):
+	inventory.insert(item)
+	print("AGARRE UN " + item.name)

@@ -26,9 +26,6 @@ layer_0/tile_data = PackedInt32Array(1376275, 131072, 0, 1376276, 131072, 0, 137
 [node name="RigidBody2D" parent="." instance=ExtResource("4_6hjqd")]
 position = Vector2(659, 191)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("4_6hjqd")]
-position = Vector2(578, 107)
-
 [node name="RigidBody2D3" parent="." instance=ExtResource("4_6hjqd")]
 position = Vector2(374, 119)
 

@@ -1,5 +1,5 @@
 class_name StateBase
-extends  Node
+extends Node
 
 var controlled_node:Node
 
