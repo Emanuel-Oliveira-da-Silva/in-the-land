@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://o3ra0dm2jbyu"]
 
 [ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_gyfom"]
-[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Inventory/Drops/Dirt_Block.tscn" id="1_q4jdw"]
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_block.tscn" id="1_q4jdw"]
 [ext_resource type="Script" path="res://Scripts/map/Tile_map.gd" id="2_hydgk"]
 [ext_resource type="PackedScene" uid="uid://c8f7a1wcyxnxr" path="res://Scenes/Map/blocks/Rock Block.tscn" id="2_l0u3r"]
 

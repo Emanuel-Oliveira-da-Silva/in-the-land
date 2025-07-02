@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" path="res://Bases/State Machines/State_Machine.gd" id="1_2xqs0"]
 
-[node name="Movement_State_Machine" type="Node" node_paths=PackedStringArray("default_state")]
+[node name="Movement_State_Machine" type="Node"]
 script = ExtResource("1_2xqs0")
-default_state = NodePath("")

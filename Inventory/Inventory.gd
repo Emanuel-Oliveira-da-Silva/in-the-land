@@ -33,3 +33,10 @@ func insert_items(slot : Inv_Slot):
 	for i in range(slot.amount):
 		insert(slot.item)
 	updated.emit()
+
+func remove_item(index:int):
+	slots[index].amount = slots[index].amount - 1
+	print(slots[index].amount)
+	if slots[index].amount < 1:
+		remove_slot(slots[index])
+	updated.emit()

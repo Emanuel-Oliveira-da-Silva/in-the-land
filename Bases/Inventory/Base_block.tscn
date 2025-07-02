@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://l11g557p4ji4"]
+
+[ext_resource type="Script" path="res://Inventory/Drops/Drop.gd" id="1_nxr10"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="2_4hkqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6of2o"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sanj"]
+radius = 25.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+scale = Vector2(0.02, 0.02)
+collision_layer = 5
+collision_mask = 5
+mass = 0.01
+gravity_scale = 0.5
+can_sleep = false
+script = ExtResource("1_nxr10")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 0.3
+speed_scale = 0.2
+randomness = 1.0
+lifetime_randomness = 0.4
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2(0, -980)
+orbit_velocity_min = -0.3
+orbit_velocity_max = 0.3
+angle_min = -80.0
+angle_max = 80.0
+scale_amount_min = 0.5
+scale_amount_max = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 4
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_6of2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_4hkqi")
+region_enabled = true
+region_rect = Rect2(31.99, -0.218906, 15.9274, 15.9208)
+region_filter_clip_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 6
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_5sanj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -27.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

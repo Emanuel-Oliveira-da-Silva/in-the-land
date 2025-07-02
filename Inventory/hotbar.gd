@@ -8,8 +8,36 @@ extends Control
 var equipped_item_index : int =  0
 
 
+func _ready():
+	connect_Slots()
+	inventory.updated.connect(update)
+	update()
+
+func connect_Slots():
+	for i in range(slots.size()):
+		var slot = slots[i]
+		slot.index = i
+
 var item_in_hand : Item_Stack_UI
 var oldIndex: int = -1
+
+func update():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		var inventorySlot : Inv_Slot = inventory.slots[i]
+		
+		if !inventorySlot.item:
+			var slot : hotbar_slot = slots[i]
+			if not slot.is_empty():
+				slot.erase_item()
+			continue
+		
+		var itemstackui : Item_Stack_UI = slots[i].item_stack_ui
+		if !itemstackui:
+			itemstackui = ItemStackUIClass.instantiate()
+			slots[i].insert(itemstackui)
+		
+		itemstackui.inventoryslot = inventorySlot
+		itemstackui.update()
 
 func take_item_from_slot(slot):
 	item_in_hand = slot.take_item()
