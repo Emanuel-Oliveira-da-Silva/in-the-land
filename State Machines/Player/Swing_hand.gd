@@ -6,8 +6,8 @@ func start():
 
 var durability : float
 
-func cursor_on_block(exists : bool):
-	if exists:
+func process(delta):
+	if controlled_node.tilemap.has_block_on_cursor():
 		state_machine.change_to("Mine")
 
 func unhandled_input(event):

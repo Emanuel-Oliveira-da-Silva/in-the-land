@@ -2,8 +2,8 @@ extends StateBase
 
 var wrapper = {"remaining_duration" : null ,"time_acumulator" : 0.0}
 
-func cursor_on_block(exists : bool):
-	if exists:
+func process(delta):
+	if controlled_node.tilemap.has_block_on_cursor():
 		controlled_node.tilemap.scrape_block(wrapper)
 		return
 	wrapper["remaining_duration"] = null

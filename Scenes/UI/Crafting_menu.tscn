@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumlhqltekqjp"]
+
+[ext_resource type="Script" path="res://Inventory/Crafting_menu.gd" id="1_0qh5d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4sg2"]
+radius = 220.002
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qh5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 648)
+shape = SubResource("CircleShape2D_r4sg2")
+
+[node name="Select" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -194.0
+offset_right = 195.0
+offset_bottom = -99.0
+grow_vertical = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="Top" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -219.0
+offset_right = 84.0
+offset_bottom = -150.0
+grow_vertical = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="Bottom" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = -83.0
+offset_right = 236.0
+offset_bottom = -14.0
+grow_vertical = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 208.0
+offset_top = -188.0
+offset_right = 248.0
+offset_bottom = -148.0
+grow_vertical = 0
+
+[connection signal="pressed" from="Select" to="." method="craft"]
+[connection signal="pressed" from="Top" to="." method="prev_item"]
+[connection signal="pressed" from="Bottom" to="." method="next_item"]

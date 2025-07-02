@@ -16,4 +16,4 @@ func update():
 		$Label.visible = true
 		$Label.text = str(inventoryslot.amount)
 	else:
-		label.visible = false
+		$Label.visible = false

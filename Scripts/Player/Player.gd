@@ -15,14 +15,17 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 
 #UI
 @onready var inventory_UI = $CanvasLayer/Inventory
+@onready var crafting_menu = $"CanvasLayer/Crafting Menu"
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
-@onready var hotbar = $CanvasLayer/Hotbar
+@onready var hotbar : Hotbar = $CanvasLayer/Hotbar
 
 
 #Resources
 @export var inventory : Inventory
 
-
+#STATS
+@export var Health : float = 100
+@export var recipes : Array[Inv_Item]
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -53,15 +56,6 @@ func _physics_process(delta):
 func play_animation(animation : String):
 		$AnimationPlayer.play(animation)
 
-signal cursor_on_block(exists : bool)
-
-func update_cursor_on_block(exists : bool):
-	if exists:
-		cursor_on_block.emit(true)
-		return
-	cursor_on_block.emit(false)
-
 
 func pick_up(slot : Inv_Slot):
 	inventory.insert_items(slot)
-	print("AGARRE UN " + slot.item.name)

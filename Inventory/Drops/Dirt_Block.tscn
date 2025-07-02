@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg0r2au5jme05"]
 
-[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_block.tscn" id="1_8o3sq"]
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_block.tscn" id="1_x14yd"]
 [ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="2_6hu12"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_pau5s"]
 
@@ -9,5 +9,5 @@ script = ExtResource("3_pau5s")
 item = ExtResource("2_6hu12")
 amount = 1
 
-[node name="RigidBody2D" instance=ExtResource("1_8o3sq")]
+[node name="RigidBody2D" instance=ExtResource("1_x14yd")]
 slotRes = SubResource("Resource_1f7pd")

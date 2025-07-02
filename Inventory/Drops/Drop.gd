@@ -10,6 +10,7 @@ func _on_body_entered(body):
 		return
 
 	if body is Drop and body != self:
+		if body.slotRes.item != slotRes.item: return
 		if self.get_instance_id() < body.get_instance_id():
 			slotRes.amount += body.slotRes.amount
 			_update_label()

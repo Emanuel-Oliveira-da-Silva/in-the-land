@@ -1,4 +1,5 @@
 extends Control
+class_name Hotbar
 
 @onready var ItemStackUIClass = preload("res://Inventory/panel_UI.tscn")
 @onready var inventory : Inventory =  self.owner.inventory

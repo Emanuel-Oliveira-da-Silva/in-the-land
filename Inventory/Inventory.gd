@@ -40,3 +40,30 @@ func remove_item(index:int):
 	if slots[index].amount < 1:
 		remove_slot(slots[index])
 	updated.emit()
+
+func craft(recipe : Array[Inv_Slot]) -> bool:
+	# Paso 1: Verificación
+	for required in recipe:
+		var total_available := 0
+		for slot in slots:
+			if slot.item == required.item:
+				total_available += slot.amount
+		if total_available < required.amount:
+			print("No hay suficientes de:", required.item.name)
+			return false # Cancelar si no hay suficientes
+
+	# Paso 2: Consumir materiales
+	for required in recipe:
+		var amount_to_remove := required.amount
+		for slot in slots:
+			if slot.item == required.item:
+				var removed = min(amount_to_remove, slot.amount)
+				slot.amount -= removed
+				amount_to_remove -= removed
+				if slot.amount < 1:
+					remove_slot(slot)
+				if amount_to_remove < 0:
+					break
+
+	updated.emit()
+	return true

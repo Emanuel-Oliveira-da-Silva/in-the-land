@@ -3,8 +3,6 @@ extends TileMap
 
 var prev_mouse_pos
 
-signal cursor_on_block( exists:bool )
-
 var _delta
 
 func _process(delta):
@@ -12,7 +10,6 @@ func _process(delta):
 	var mouse_pos = local_to_map(get_local_mouse_position())
 	if mouse_pos != prev_mouse_pos:
 		update_mouse_position(mouse_pos)
-	has_block_on_cursor()
 
 func update_mouse_position(mouse_pos):
 	if prev_mouse_pos:
@@ -24,12 +21,8 @@ var emited : bool
 
 func has_block_on_cursor():
 	if get_cell_tile_data(0,prev_mouse_pos):
-		cursor_on_block.emit(true)
-		emited = false
-		return
-	if not emited:
-		cursor_on_block.emit(false)
-		emited = true
+		return true
+	return false
 
 var last_block
 
