@@ -17,7 +17,6 @@ func update_mouse_position(mouse_pos):
 	prev_mouse_pos = mouse_pos
 	set_cell(1,mouse_pos,0,Vector2i(11,9))
 
-var emited : bool
 
 func has_block_on_cursor():
 	if get_cell_tile_data(0,prev_mouse_pos):
@@ -26,7 +25,7 @@ func has_block_on_cursor():
 
 var last_block
 
-func scrape_block(data):
+func scrape_block(data, mining : float):
 	#Calculate the time
 	data["time_acumulator"] += _delta
 	if data["time_acumulator"] >= 0.1:
@@ -37,7 +36,7 @@ func scrape_block(data):
 		if data["remaining_duration"] == null or block != last_block:
 			last_block = block
 			data["remaining_duration"] = block.get_custom_data("Hardness")
-		data["remaining_duration"] += -1
+		data["remaining_duration"] += mining * -1
 		
 		#erase the block if the duration its below 0 and restart the remaining duration
 		if data["remaining_duration"] <= 0:

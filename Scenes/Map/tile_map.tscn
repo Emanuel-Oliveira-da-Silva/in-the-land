@@ -834,6 +834,8 @@ custom_data_layer_1/name = "Drop"
 custom_data_layer_1/type = 24
 custom_data_layer_2/name = "Amount"
 custom_data_layer_2/type = 2
+custom_data_layer_3/name = "Crafting_LVL"
+custom_data_layer_3/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ggggr")
 sources/1 = SubResource("TileSetScenesCollectionSource_sit08")
 

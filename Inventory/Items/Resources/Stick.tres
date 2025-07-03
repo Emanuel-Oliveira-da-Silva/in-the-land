@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Inv_Item" load_steps=9 format=3 uid="uid://vql25gjt7utj"]
+
+[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="1_4faif"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="2_162q3"]
+[ext_resource type="Script" path="res://Inventory/Items/Recipe.gd" id="3_mea2e"]
+[ext_resource type="Script" path="res://Inventory/Items/Item.gd" id="4_ftfjj"]
+[ext_resource type="Texture2D" uid="uid://d08p3gtdtxpxm" path="res://Assets/all Items/items_sheet.png" id="5_n81yv"]
+
+[sub_resource type="Resource" id="Resource_uhpjb"]
+script = ExtResource("2_162q3")
+item = ExtResource("1_4faif")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_ko47k"]
+script = ExtResource("3_mea2e")
+inputs = Array[ExtResource("2_162q3")]([SubResource("Resource_uhpjb")])
+output_Quantity = 4
+crafting_lvl = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrevk"]
+atlas = ExtResource("5_n81yv")
+region = Rect2(112, 52, 12, 12)
+filter_clip = true
+
+[resource]
+script = ExtResource("4_ftfjj")
+name = "Stick"
+texture = SubResource("AtlasTexture_jrevk")
+stack = 64
+recipe = SubResource("Resource_ko47k")

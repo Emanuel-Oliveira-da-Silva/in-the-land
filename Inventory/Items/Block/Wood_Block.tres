@@ -16,4 +16,3 @@ durable = false
 name = "Wood Block"
 texture = SubResource("AtlasTexture_piylf")
 stack = 64
-recipee = Array[Resource("res://Inventory/Slots/Inv_Slot.gd")]([])

@@ -67,3 +67,6 @@ func move_selector_to_right():
 func move_selector_to_left():
 	equipped_item_index = (equipped_item_index - 1 + slots.size()) % slots.size()
 	selector.global_position = slots[equipped_item_index].global_position
+
+func get_equipped_item():
+	return inventory.slots[equipped_item_index].item

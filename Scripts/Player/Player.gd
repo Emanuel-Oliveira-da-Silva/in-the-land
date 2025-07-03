@@ -56,6 +56,5 @@ func _physics_process(delta):
 func play_animation(animation : String):
 		$AnimationPlayer.play(animation)
 
-
 func pick_up(slot : Inv_Slot):
 	inventory.insert_items(slot)

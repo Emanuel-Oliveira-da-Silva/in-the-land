@@ -30,7 +30,7 @@ func update():
 			itemstackui = item_stack_ui_class.instantiate()
 			itemstackui.inventoryslot = slot
 			itemstackui.update()
-			itemstackui.size = Vector2i(40,40)
+			itemstackui.custom_minimum_size = Vector2i(40,40)
 			h_box_container.add_child(itemstackui)
 
 

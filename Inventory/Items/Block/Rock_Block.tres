@@ -16,4 +16,3 @@ durable = false
 name = "Rock Block"
 texture = SubResource("AtlasTexture_53103")
 stack = 64
-recipee = Array[Resource("res://Inventory/Slots/Inv_Slot.gd")]([])

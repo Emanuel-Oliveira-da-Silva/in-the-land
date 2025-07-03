@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dt83faj5qwq15" path="res://Assets/Fonts/ByteBounce.ttf" id="1_q1pkt"]
 
 [node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_7ovy4")
 
 [node name="item" type="Sprite2D" parent="."]
