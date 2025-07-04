@@ -59,6 +59,3 @@ func play_animation(animation : String):
 
 func pick_up(slot : Inv_Slot):
 	inventory.insert_items(slot)
-
-func update_crafting_tiles():
-	CraftingManager.update_tiles_in_range(interaction_area,tilemap)

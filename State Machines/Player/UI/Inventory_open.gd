@@ -18,7 +18,6 @@ func process(delta):
 	controlled_node.inventory_UI.update_itemInHand()
 	if Input.is_action_just_pressed("right_click"):
 		controlled_node.inventory_UI.right_click()
-	controlled_node.update_crafting_tiles()
 	if controlled_node.recipe_lvl != CraftingManager.get_crafting_lvl():
 		controlled_node.recipe_lvl = CraftingManager.get_crafting_lvl()
 		controlled_node.crafting_menu.update_recipes()

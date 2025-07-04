@@ -950,7 +950,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tebse"]
-radius = 37.0135
+radius = 37.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2

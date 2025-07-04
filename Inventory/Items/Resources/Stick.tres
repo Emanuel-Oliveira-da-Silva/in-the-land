@@ -15,7 +15,6 @@ amount = 1
 script = ExtResource("3_mea2e")
 inputs = Array[ExtResource("2_162q3")]([SubResource("Resource_uhpjb")])
 output_Quantity = 4
-crafting_lvl = 0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrevk"]
 atlas = ExtResource("5_n81yv")

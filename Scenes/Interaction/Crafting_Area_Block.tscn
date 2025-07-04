@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://binkuygd7v2an"]
+
+[ext_resource type="PackedScene" uid="uid://bl8x0aaf27hv2" path="res://Scenes/Interaction/Interaction_Area.tscn" id="1_0juec"]
+[ext_resource type="Script" path="res://Scripts/Interaction/InteractionArea_Block.gd" id="2_dpt7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kfmpa"]
+radius = 37.0
+
+[node name="CraftingArea" instance=ExtResource("1_0juec")]
+collision_mask = 2
+script = ExtResource("2_dpt7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_kfmpa")

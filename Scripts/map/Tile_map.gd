@@ -46,6 +46,7 @@ func scrape_block(data, mining : float):
 		if data["remaining_duration"] <= 0:
 			data["remaining_duration"] = null
 			erase_cell(BLOCKS_LAYER,prev_mouse_pos)
+			remove_area_at_position(prev_mouse_pos)
 			var new_drop = block.get_custom_data("Drop").duplicate()
 			if new_drop:
 				var drop = new_drop.instantiate()
@@ -56,6 +57,22 @@ func scrape_block(data, mining : float):
 				drop.global_position = map_to_local(prev_mouse_pos)
 
 func place_block(source_id : int, atlas_coords : Vector2i):
-	if get_cell_tile_data(BLOCKS_LAYER,prev_mouse_pos): return
+	var mouse_pos = prev_mouse_pos
+	if get_cell_tile_data(BLOCKS_LAYER,mouse_pos): return
 	
-	set_cell(0,prev_mouse_pos,source_id,atlas_coords)
+	set_cell(0,mouse_pos,source_id,atlas_coords)
+	
+	var tile_data : TileData = get_cell_tile_data(BLOCKS_LAYER,mouse_pos)
+	if tile_data.get_custom_data("Area_In"):
+		var new_area = tile_data.get_custom_data("Area_In").duplicate()
+		var area : Interaction_Area = new_area.instantiate()
+		area.global_position = map_to_local(mouse_pos)
+		area.tile_data = tile_data
+		add_child(area)
+
+func remove_area_at_position(position : Vector2i):
+	for area in self.get_children():
+		if area is Area2D:
+			if local_to_map(area.global_position) == position:
+				area.queue_free()
+				break
