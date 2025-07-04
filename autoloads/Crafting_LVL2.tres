@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Crafting_recipes" load_steps=3 format=3 uid="uid://0w6wkhlnb0v6"]
-
-[ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="1_op1lo"]
-[ext_resource type="Script" path="res://autoloads/Recipes.gd" id="2_db4er"]
-
-[resource]
-script = ExtResource("2_db4er")
-items = Array[Resource("res://Inventory/Items/Item.gd")]([ExtResource("1_op1lo")])

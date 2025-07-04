@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Crafting_recipes" load_steps=2 format=3 uid="uid://c34665biowv4j"]
+
+[ext_resource type="Script" path="res://autoloads/Recipes/Recipes.gd" id="1_wf54k"]
+
+[resource]
+script = ExtResource("1_wf54k")
+items = Array[Resource("res://Inventory/Items/Item.gd")]([])

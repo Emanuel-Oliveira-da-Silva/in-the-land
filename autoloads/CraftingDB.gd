@@ -2,8 +2,8 @@ extends Node
 
 
 const CRAFTING_lEVELS := [
-	preload("res://autoloads/Crafting_LVL1.tres"),
-	preload("res://autoloads/Crafting_LVL2.tres")
+	preload("res://autoloads/Recipes/Crafting_LVL1.tres"),
+	preload("res://autoloads/Recipes/Crafting_LVL2.tres")
 ]
 
 const COOKING_LEVELS := [

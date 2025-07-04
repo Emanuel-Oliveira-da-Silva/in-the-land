@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_bvluy"]
 [ext_resource type="PackedScene" uid="uid://o2h67bx0dmp3" path="res://Bases/State Machines/state_machine.tscn" id="3_m2utd"]
-[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="3_yvxe2"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
 [ext_resource type="Script" path="res://State Machines/Player/Walking.gd" id="5_pgwf0"]
+[ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="5_sd0ru"]
 [ext_resource type="Script" path="res://State Machines/Player/Running.gd" id="6_8kfn4"]
 [ext_resource type="Script" path="res://State Machines/Player/Hand_Mine.gd" id="6_g4qdx"]
 [ext_resource type="Script" path="res://State Machines/Player/Jump.gd" id="7_qbvkg"]
@@ -27,28 +27,24 @@
 
 [sub_resource type="Resource" id="Resource_byydd"]
 script = ExtResource("3_bvluy")
-item = ExtResource("3_yvxe2")
-amount = 4
+item = ExtResource("5_sd0ru")
+amount = 0
 
 [sub_resource type="Resource" id="Resource_t1fi3"]
 script = ExtResource("3_bvluy")
-item = ExtResource("3_yvxe2")
-amount = 4
+amount = 0
 
 [sub_resource type="Resource" id="Resource_ff60i"]
 script = ExtResource("3_bvluy")
-item = ExtResource("3_yvxe2")
-amount = 2
+amount = 0
 
 [sub_resource type="Resource" id="Resource_i4t8b"]
 script = ExtResource("3_bvluy")
-item = ExtResource("3_yvxe2")
-amount = 5
+amount = 0
 
 [sub_resource type="Resource" id="Resource_tgf5f"]
 script = ExtResource("3_bvluy")
-item = ExtResource("3_yvxe2")
-amount = 8
+amount = 0
 
 [sub_resource type="Resource" id="Resource_ligl2"]
 script = ExtResource("3_bvluy")

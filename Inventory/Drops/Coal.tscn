@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://u7j4qyjvkj0m"]
+
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_drop.tscn" id="1_73gf6"]
+[ext_resource type="Texture2D" uid="uid://d08p3gtdtxpxm" path="res://Assets/all Items/items_sheet.png" id="2_70wpf"]
+[ext_resource type="Resource" uid="uid://c5phg86cu8sat" path="res://Inventory/Items/Resources/Coal.tres" id="2_341p7"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_w7a8m"]
+
+[sub_resource type="Resource" id="Resource_a7586"]
+script = ExtResource("3_w7a8m")
+item = ExtResource("2_341p7")
+amount = 1
+
+[node name="RigidBody2D" instance=ExtResource("1_73gf6")]
+slotRes = SubResource("Resource_a7586")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_70wpf")
+region_rect = Rect2(16, 272, 16, 16)

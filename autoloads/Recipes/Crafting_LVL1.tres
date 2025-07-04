@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="1_30v5m"]
 [ext_resource type="Resource" uid="uid://vql25gjt7utj" path="res://Inventory/Items/Resources/Stick.tres" id="2_pl7wj"]
 [ext_resource type="Resource" uid="uid://dxrig35wnu7lj" path="res://Inventory/Items/Block/Crafting_Table_Block.tres" id="3_u37a7"]
-[ext_resource type="Script" path="res://autoloads/Recipes.gd" id="4_nabn1"]
+[ext_resource type="Script" path="res://autoloads/Recipes/Recipes.gd" id="4_nabn1"]
 
 [resource]
 script = ExtResource("4_nabn1")

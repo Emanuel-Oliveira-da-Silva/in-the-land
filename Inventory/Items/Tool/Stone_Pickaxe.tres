@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Inv_Tool" load_steps=11 format=3 uid="uid://datb6n1nsw6in"]
+
+[ext_resource type="Resource" uid="uid://bs6uiigxirkb7" path="res://Inventory/Items/Block/Rock_Block.tres" id="1_7luud"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="2_3oi22"]
+[ext_resource type="Resource" uid="uid://vql25gjt7utj" path="res://Inventory/Items/Resources/Stick.tres" id="3_1w5ip"]
+[ext_resource type="Script" path="res://Inventory/Items/Recipe.gd" id="4_sudm5"]
+[ext_resource type="Script" path="res://Inventory/Items/Tool.gd" id="5_lr8ko"]
+[ext_resource type="Texture2D" uid="uid://d08p3gtdtxpxm" path="res://Assets/all Items/items_sheet.png" id="6_h0snd"]
+
+[sub_resource type="Resource" id="Resource_fpe4m"]
+script = ExtResource("2_3oi22")
+item = ExtResource("1_7luud")
+amount = 3
+
+[sub_resource type="Resource" id="Resource_p0spe"]
+script = ExtResource("2_3oi22")
+item = ExtResource("3_1w5ip")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_yjsir"]
+script = ExtResource("4_sudm5")
+inputs = Array[ExtResource("2_3oi22")]([SubResource("Resource_fpe4m"), SubResource("Resource_p0spe")])
+output_Quantity = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0hpo"]
+atlas = ExtResource("6_h0snd")
+region = Rect2(336, 0, 16, 16)
+
+[resource]
+script = ExtResource("5_lr8ko")
+mining = 5.22
+name = "Stone Pickaxe"
+texture = SubResource("AtlasTexture_t0hpo")
+stack = 1
+recipe = SubResource("Resource_yjsir")

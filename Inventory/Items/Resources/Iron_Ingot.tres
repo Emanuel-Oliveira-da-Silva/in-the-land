@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Inv_Item" load_steps=11 format=3 uid="uid://cy77h5wddd6v2"]
+
+[ext_resource type="Resource" uid="uid://bdsef03m8gw2x" path="res://Inventory/Items/Resources/Raw_Iron.tres" id="1_bcl2j"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="2_cl1it"]
+[ext_resource type="Resource" uid="uid://c5phg86cu8sat" path="res://Inventory/Items/Resources/Coal.tres" id="3_lyp6a"]
+[ext_resource type="Script" path="res://Inventory/Items/Recipe.gd" id="4_1rviq"]
+[ext_resource type="Script" path="res://Inventory/Items/Item.gd" id="5_5nngk"]
+[ext_resource type="Texture2D" uid="uid://d08p3gtdtxpxm" path="res://Assets/all Items/items_sheet.png" id="6_3oao8"]
+
+[sub_resource type="Resource" id="Resource_xw1vg"]
+script = ExtResource("2_cl1it")
+item = ExtResource("1_bcl2j")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_1dd1c"]
+script = ExtResource("2_cl1it")
+item = ExtResource("3_lyp6a")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_yr7su"]
+script = ExtResource("4_1rviq")
+inputs = Array[ExtResource("2_cl1it")]([SubResource("Resource_xw1vg"), SubResource("Resource_1dd1c")])
+output_Quantity = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn7tb"]
+atlas = ExtResource("6_3oao8")
+region = Rect2(144, 208, 16, 16)
+filter_clip = true
+
+[resource]
+script = ExtResource("5_5nngk")
+name = "Iron Ingot"
+texture = SubResource("AtlasTexture_jn7tb")
+stack = 72
+recipe = SubResource("Resource_yr7su")

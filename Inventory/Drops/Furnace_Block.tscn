@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://djkgblsctq7ig"]
+
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_drop.tscn" id="1_2hq3n"]
+[ext_resource type="Resource" uid="uid://l8ov7b0s6m7" path="res://Inventory/Items/Block/Furnace_Block.tres" id="2_yj7bm"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_id8gi"]
+
+[sub_resource type="Resource" id="Resource_ug6it"]
+script = ExtResource("3_id8gi")
+item = ExtResource("2_yj7bm")
+amount = 1
+
+[node name="RigidBody2D" instance=ExtResource("1_2hq3n")]
+slotRes = SubResource("Resource_ug6it")
+
+[node name="Sprite2D" parent="." index="2"]
+region_rect = Rect2(192, 32, 16, 16)
