@@ -23,10 +23,13 @@ func take_item():
 	
 	inventory_UI.inventory.remove_slot(item_stack_ui.inventoryslot)
 	
-	center_container.remove_child(item_stack_ui)
-	item_stack_ui = null
+	erase_item()
 	
 	return item
+
+func erase_item():
+	center_container.remove_child(item_stack_ui)
+	item_stack_ui = null
 
 func is_empty():
 	return !item_stack_ui

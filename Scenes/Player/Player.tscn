@@ -1,19 +1,15 @@
-[gd_scene load_steps=119 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=117 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_qbu3u"]
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_bvluy"]
 [ext_resource type="PackedScene" uid="uid://o2h67bx0dmp3" path="res://Bases/State Machines/state_machine.tscn" id="3_m2utd"]
-[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="3_uteww"]
 [ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="3_yvxe2"]
-[ext_resource type="Resource" uid="uid://bs6uiigxirkb7" path="res://Inventory/Items/Block/Rock_Block.tres" id="4_eirxa"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
 [ext_resource type="Script" path="res://State Machines/Player/Walking.gd" id="5_pgwf0"]
-[ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="5_sd0ru"]
 [ext_resource type="Script" path="res://State Machines/Player/Running.gd" id="6_8kfn4"]
 [ext_resource type="Script" path="res://State Machines/Player/Hand_Mine.gd" id="6_g4qdx"]
-[ext_resource type="Resource" uid="uid://vql25gjt7utj" path="res://Inventory/Items/Resources/Stick.tres" id="7_55r5q"]
 [ext_resource type="Script" path="res://State Machines/Player/Jump.gd" id="7_qbvkg"]
 [ext_resource type="Script" path="res://State Machines/Player/Falling.gd" id="8_ilvt1"]
 [ext_resource type="Script" path="res://State Machines/Player/Landing.gd" id="9_qjdoe"]
@@ -27,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cjmgju2k7kx4b" path="res://Inventory/inventory_UI.tscn" id="17_671f1"]
 [ext_resource type="PackedScene" uid="uid://bos7m72us7ng7" path="res://Inventory/hotbar.tscn" id="21_v452b"]
 [ext_resource type="PackedScene" uid="uid://cumlhqltekqjp" path="res://Scenes/UI/Crafting_menu.tscn" id="23_lrvww"]
+[ext_resource type="PackedScene" uid="uid://bl8x0aaf27hv2" path="res://Scenes/Interaction/Interaction_Area.tscn" id="24_yvjvd"]
 
 [sub_resource type="Resource" id="Resource_byydd"]
 script = ExtResource("3_bvluy")
@@ -956,11 +953,13 @@ _data = {
 "Walk": SubResource("Animation_jv4lh")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tebse"]
+radius = 37.0135
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_tak2d")
 inventory = SubResource("Resource_rq0bc")
-recipes = Array[Resource("res://Inventory/Items/Item.gd")]([ExtResource("5_sd0ru"), ExtResource("3_uteww"), ExtResource("7_55r5q"), ExtResource("4_eirxa")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3u4rw")
@@ -1048,3 +1047,8 @@ grow_vertical = 1
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("14_eevnp")]
 visible = false
+
+[node name="InractionArea" parent="." instance=ExtResource("24_yvjvd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InractionArea"]
+shape = SubResource("CircleShape2D_tebse")

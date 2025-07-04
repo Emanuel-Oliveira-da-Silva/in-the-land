@@ -12,6 +12,7 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 
 
 @onready var tilemap : Tile_Map = $"../TileMap"
+@onready var interaction_area = $InractionArea
 
 #UI
 @onready var inventory_UI = $CanvasLayer/Inventory
@@ -25,7 +26,7 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 
 #STATS
 @export var Health : float = 100
-@export var recipes : Array[Inv_Item]
+@export var recipe_lvl : int = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -58,3 +59,6 @@ func play_animation(animation : String):
 
 func pick_up(slot : Inv_Slot):
 	inventory.insert_items(slot)
+
+func update_crafting_tiles():
+	CraftingManager.update_tiles_in_range(interaction_area,tilemap)

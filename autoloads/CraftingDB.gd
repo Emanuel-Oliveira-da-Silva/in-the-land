@@ -10,15 +10,14 @@ const COOKING_LEVELS := [
 	
 ]
 
-var crafting_recipes = {
-}
+var crafting_recipes = {}
 
 func ready():
 	for lvl in CRAFTING_lEVELS.size():
 		crafting_recipes[lvl] = get_recipes_up_to_level(lvl)
 
 func get_recipes_up_to_level(level : int):
-	var combined_items := []
+	var combined_items : Array[Inv_Item] = []
 	for i in range(level + 1):
 		combined_items.append_array(CRAFTING_lEVELS[i].items)
 	return combined_items

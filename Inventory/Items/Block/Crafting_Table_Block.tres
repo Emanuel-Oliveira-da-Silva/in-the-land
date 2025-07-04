@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Inv_Block" load_steps=9 format=3 uid="uid://dxrig35wnu7lj"]
+
+[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="1_h68gc"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="2_ne62e"]
+[ext_resource type="Script" path="res://Inventory/Items/Recipe.gd" id="3_bi4o6"]
+[ext_resource type="Script" path="res://Inventory/Items/Block.gd" id="4_s5y2i"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="5_na4us"]
+
+[sub_resource type="Resource" id="Resource_wacs2"]
+script = ExtResource("2_ne62e")
+item = ExtResource("1_h68gc")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_yqnub"]
+script = ExtResource("3_bi4o6")
+inputs = Array[ExtResource("2_ne62e")]([SubResource("Resource_wacs2")])
+output_Quantity = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj1rj"]
+atlas = ExtResource("5_na4us")
+region = Rect2(176, 48, 16, 16)
+filter_clip = true
+
+[resource]
+script = ExtResource("4_s5y2i")
+Source_ID = 0
+Atlas_coord = Vector2i(11, 3)
+durable = false
+name = "Crafting Table"
+texture = SubResource("AtlasTexture_gj1rj")
+stack = 64
+recipe = SubResource("Resource_yqnub")

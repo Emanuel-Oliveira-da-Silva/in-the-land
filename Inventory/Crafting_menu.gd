@@ -2,7 +2,7 @@ extends Control
 
 @onready var player : Player = self.owner
 @onready var inventory : Inventory =  self.owner.inventory
-@onready var recipes : Array[Inv_Item] = player.recipes
+@onready var recipes : Array[Inv_Item] = CraftingDB.get_recipes_up_to_level(player.recipe_lvl)
 
 var item_stack_ui_class = preload("res://Inventory/panel_UI.tscn")
 
@@ -14,10 +14,11 @@ var selected_item_index : int = 1
 @onready var h_box_container = $HBoxContainer
 
 func _ready():
-	recipes = player.recipes
 	update()
 
 func update():
+	if selected_item_index > recipes.size() - 1:
+		selected_item_index = 0
 	select.icon = recipes[selected_item_index].texture
 	top.icon = recipes[(selected_item_index - 1 + recipes.size()) % recipes.size()].texture
 	bottom.icon = recipes[(selected_item_index + 1) % recipes.size()].texture
@@ -33,7 +34,6 @@ func update():
 			itemstackui.custom_minimum_size = Vector2i(40,40)
 			h_box_container.add_child(itemstackui)
 
-
 func next_item():
 	selected_item_index = (selected_item_index + 1) % recipes.size()
 	update()
@@ -47,3 +47,7 @@ func craft():
 		if inventory.craft(recipes[selected_item_index].recipe.inputs):
 			for item in recipes[selected_item_index].recipe.output_Quantity:
 				inventory.insert(recipes[selected_item_index])
+
+func update_recipes():
+	recipes = CraftingDB.get_recipes_up_to_level(player.recipe_lvl)
+	update()

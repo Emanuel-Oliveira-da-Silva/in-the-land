@@ -3,13 +3,14 @@ extends StateBase
 func start():
 	controlled_node.hotbar.visible = true
 	controlled_node.inventory_UI.locked = true
+	controlled_node.inventory_UI.put_item_back()
+	controlled_node.inventory_UI.visible = false
+	controlled_node.crafting_menu.visible = false
 
 var frame = false
 
 func unhandled_input(event):
 	if Input.is_action_just_pressed("Inventory"):
-		controlled_node.inventory_UI.visible = true
-		controlled_node.crafting_menu.visible = true
 		state_machine.change_to("Inventory_open")
 	
 	elif Input.is_action_just_pressed("ui_cancel"):
