@@ -1,0 +1,120 @@
+[gd_scene load_steps=32 format=3 uid="uid://ct0msxs3cmi57"]
+
+[ext_resource type="PackedScene" uid="uid://cbqn24tk2tihe" path="res://Bases/Inventory/Entity_Block.tscn" id="1_itve2"]
+[ext_resource type="Script" path="res://Scripts/map/blocks/Storage_blocks/Storage_Block.gd" id="2_bi66r"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="3_a4ko2"]
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_ibfuj"]
+[ext_resource type="PackedScene" uid="uid://kla4h6prhbku" path="res://Inventory/Drops/Barrel_Block.tscn" id="3_oqdwn"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="4_wrfsk"]
+[ext_resource type="PackedScene" uid="uid://b2u4pivawcnhv" path="res://Scenes/UI/blocks/barrel_inventory_UI.tscn" id="5_fxysc"]
+[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="5_rrwrb"]
+[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="6_mtx8n"]
+
+[sub_resource type="Resource" id="Resource_i1wjt"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_pt7d3"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_51a3l"]
+script = ExtResource("4_wrfsk")
+item = ExtResource("5_rrwrb")
+amount = 5
+
+[sub_resource type="Resource" id="Resource_e2qqb"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ybsp7"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_lvkhm"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_a8q4j"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_sv8t3"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_wfrrm"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qx7x0"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_cpcca"]
+script = ExtResource("4_wrfsk")
+item = ExtResource("6_mtx8n")
+amount = 32
+
+[sub_resource type="Resource" id="Resource_rxodt"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_6msxk"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_hhs1s"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_65wy0"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_k57u1"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vfp3d"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_b183x"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_7grxe"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_j8krv"]
+script = ExtResource("4_wrfsk")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_m6rx1"]
+script = ExtResource("3_ibfuj")
+slots = Array[ExtResource("4_wrfsk")]([SubResource("Resource_i1wjt"), SubResource("Resource_pt7d3"), SubResource("Resource_51a3l"), SubResource("Resource_e2qqb"), SubResource("Resource_ybsp7"), SubResource("Resource_lvkhm"), SubResource("Resource_a8q4j"), SubResource("Resource_sv8t3"), SubResource("Resource_wfrrm"), SubResource("Resource_qx7x0"), SubResource("Resource_cpcca"), SubResource("Resource_rxodt"), SubResource("Resource_6msxk"), SubResource("Resource_hhs1s"), SubResource("Resource_65wy0"), SubResource("Resource_k57u1"), SubResource("Resource_vfp3d"), SubResource("Resource_b183x"), SubResource("Resource_7grxe"), SubResource("Resource_j8krv")])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eufek"]
+radius = 48.0
+
+[node name="Storage_Block" instance=ExtResource("1_itve2")]
+collision_mask = 2
+script = ExtResource("2_bi66r")
+inventory = SubResource("Resource_m6rx1")
+inventory_UI = ExtResource("5_fxysc")
+hardness = 30.0
+drop = ExtResource("3_oqdwn")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_a4ko2")
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_eufek")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

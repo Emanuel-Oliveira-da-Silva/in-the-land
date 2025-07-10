@@ -21,11 +21,12 @@ func update_mouse_position(mouse_pos):
 	prev_mouse_pos = mouse_pos
 	set_cell(CURSOR_LAYER,mouse_pos,0,Vector2i(11,9))
 
-
-func has_block_on_cursor():
+func get_block_on_cursor():
 	if get_cell_tile_data(BLOCKS_LAYER,prev_mouse_pos):
-		return true
-	return false
+		return get_cell_tile_data(BLOCKS_LAYER,prev_mouse_pos)
+	if get_scene_at_position(prev_mouse_pos):
+		return get_scene_at_position(prev_mouse_pos)
+	return null
 
 var last_block
 
@@ -37,6 +38,7 @@ func scrape_block(data, mining : float):
 		
 		#substract the duration of the block
 		var block = get_cell_tile_data(BLOCKS_LAYER,prev_mouse_pos)
+		if !block: return
 		if data["remaining_duration"] == null or block != last_block:
 			last_block = block
 			data["remaining_duration"] = block.get_custom_data("Hardness")
@@ -58,17 +60,25 @@ func scrape_block(data, mining : float):
 
 func place_block(source_id : int, atlas_coords : Vector2i):
 	var mouse_pos = prev_mouse_pos
-	if get_cell_tile_data(BLOCKS_LAYER,mouse_pos): return
 	
-	set_cell(0,mouse_pos,source_id,atlas_coords)
+	set_cell(BLOCKS_LAYER,mouse_pos,source_id,atlas_coords)
 	
 	var tile_data : TileData = get_cell_tile_data(BLOCKS_LAYER,mouse_pos)
+	
+	if source_id > 0 : return
 	if tile_data.get_custom_data("Area_In"):
 		var new_area = tile_data.get_custom_data("Area_In").duplicate()
 		var area : Interaction_Area = new_area.instantiate()
 		area.global_position = map_to_local(mouse_pos)
 		area.tile_data = tile_data
 		add_child(area)
+
+func get_scene_at_position(position : Vector2i):
+	for scene in self.get_children():
+		if scene is Entity_Bock:
+			if local_to_map(scene.global_position) == position:
+				return scene
+	return null
 
 func remove_area_at_position(position : Vector2i):
 	for area in self.get_children():

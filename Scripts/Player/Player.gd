@@ -6,16 +6,17 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 
 
 #State Machines:
-@onready var movement_state_machine = $Movement_State_Machine
-@onready var hand_state_machine = $Hand_State_Machine
-@onready var ui_state_machine = $UI_State_Machine
+@onready var movement_state_machine : StateMachine = $Movement_State_Machine
+@onready var hand_state_machine : StateMachine = $Hand_State_Machine
+@onready var ui_state_machine : StateMachine = $UI_State_Machine
 
 
 @onready var tilemap : Tile_Map = $"../TileMap"
 @onready var interaction_area = $InractionArea
 
 #UI
-@onready var inventory_UI = $CanvasLayer/Inventory
+@onready var canvas_layer : CanvasLayer = $CanvasLayer
+@onready var inventory_UI : Inventory_UI = $CanvasLayer/Inventory
 @onready var crafting_menu = $"CanvasLayer/Crafting Menu"
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var hotbar : Hotbar = $CanvasLayer/Hotbar

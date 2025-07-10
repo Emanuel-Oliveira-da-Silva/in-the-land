@@ -7,4 +7,5 @@ func _on_body_entered(body):
 	CraftingManager.register_tile(tile_data)
 
 func _on_body_exited(body):
+	print("BYE BYE PLAYEEEEEEEERRR")
 	CraftingManager.unregister_tile(tile_data)

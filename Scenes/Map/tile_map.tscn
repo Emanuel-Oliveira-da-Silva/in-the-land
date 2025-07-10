@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://o3ra0dm2jbyu"]
+[gd_scene load_steps=16 format=3 uid="uid://o3ra0dm2jbyu"]
 
 [ext_resource type="PackedScene" uid="uid://cl3kejqvl6bak" path="res://Inventory/Drops/Rock_Block.tscn" id="1_0o0a4"]
 [ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_gyfom"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkkc56cvykkt" path="res://Inventory/Drops/Wood_Block.tscn" id="4_j50sv"]
 [ext_resource type="PackedScene" uid="uid://bq8w4uh7q6rki" path="res://Inventory/Drops/Raw_Iron.tscn" id="4_mm3uy"]
 [ext_resource type="PackedScene" uid="uid://binkuygd7v2an" path="res://Scenes/Interaction/Crafting_Area_Block.tscn" id="6_5dvek"]
+[ext_resource type="PackedScene" uid="uid://ct0msxs3cmi57" path="res://Bases/Inventory/storage_block.tscn" id="11_enrm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggggr"]
 texture = ExtResource("1_gyfom")
@@ -849,25 +850,9 @@ texture = ExtResource("1_gyfom")
 12:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:3/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_olqa1"]
-size = Vector2(16, 16)
-
-[sub_resource type="PackedScene" id="PackedScene_7fxtl"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("StaticBody2D", "StaticBody2D", "collision_mask", "Sprite2D", "Sprite2D", "texture", "region_enabled", "region_rect", "CollisionShape2D", "CollisionShape2D", "shape"),
-"node_count": 3,
-"node_paths": [NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 1, 10, 4, 0),
-"variants": [7, ExtResource("1_gyfom"), true, Rect2(16, 0, 16, 16), SubResource("RectangleShape2D_olqa1")],
-"version": 3
-}
-
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sit08"]
 resource_name = "Bloques especiales"
-scenes/1/scene = SubResource("PackedScene_7fxtl")
+scenes/0/scene = ExtResource("11_enrm8")
 
 [sub_resource type="TileSet" id="TileSet_n4qpm"]
 physics_layer_0/collision_layer = 1
@@ -895,6 +880,3 @@ layer_1/name = "cursor"
 layer_1/z_index = 2
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_hydgk")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1

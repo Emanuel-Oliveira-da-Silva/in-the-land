@@ -29,6 +29,7 @@ offset_top = -194.0
 offset_right = 195.0
 offset_bottom = -99.0
 grow_vertical = 0
+focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
@@ -42,6 +43,7 @@ offset_top = -219.0
 offset_right = 84.0
 offset_bottom = -150.0
 grow_vertical = 0
+focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
@@ -55,6 +57,7 @@ offset_top = -83.0
 offset_right = 236.0
 offset_bottom = -14.0
 grow_vertical = 0
+focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 

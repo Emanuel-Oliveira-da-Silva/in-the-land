@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=118 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_qbu3u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_bvluy"]
 [ext_resource type="PackedScene" uid="uid://o2h67bx0dmp3" path="res://Bases/State Machines/state_machine.tscn" id="3_m2utd"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
+[ext_resource type="Resource" uid="uid://24x62cv84065" path="res://Inventory/Items/Block/Barrel_Block.tres" id="5_nkirs"]
 [ext_resource type="Script" path="res://State Machines/Player/Walking.gd" id="5_pgwf0"]
 [ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="5_sd0ru"]
 [ext_resource type="Script" path="res://State Machines/Player/Running.gd" id="6_8kfn4"]
@@ -32,7 +33,8 @@ amount = 0
 
 [sub_resource type="Resource" id="Resource_t1fi3"]
 script = ExtResource("3_bvluy")
-amount = 0
+item = ExtResource("5_nkirs")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_ff60i"]
 script = ExtResource("3_bvluy")

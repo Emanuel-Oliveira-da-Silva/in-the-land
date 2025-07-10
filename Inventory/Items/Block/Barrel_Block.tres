@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Inv_Block" load_steps=9 format=3 uid="uid://24x62cv84065"]
+
+[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="1_qarkx"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="2_87pqc"]
+[ext_resource type="Script" path="res://Inventory/Items/Recipe.gd" id="3_qmpky"]
+[ext_resource type="Script" path="res://Inventory/Items/Block.gd" id="4_x0xe1"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="5_bd02h"]
+
+[sub_resource type="Resource" id="Resource_xbabv"]
+script = ExtResource("2_87pqc")
+item = ExtResource("1_qarkx")
+amount = 6
+
+[sub_resource type="Resource" id="Resource_j817x"]
+script = ExtResource("3_qmpky")
+inputs = Array[ExtResource("2_87pqc")]([SubResource("Resource_xbabv")])
+output_Quantity = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl5s5"]
+atlas = ExtResource("5_bd02h")
+region = Rect2(128, 0, 16, 16)
+
+[resource]
+script = ExtResource("4_x0xe1")
+Source_ID = 1
+Atlas_coord = Vector2i(0, 0)
+durable = true
+name = "Barrel"
+texture = SubResource("AtlasTexture_kl5s5")
+stack = 64
+recipe = SubResource("Resource_j817x")

@@ -3,15 +3,22 @@ extends StateBase
 var wrapper = {"remaining_duration" : null ,"time_acumulator" : 0.0}
 
 func process(delta):
-	if controlled_node.tilemap.has_block_on_cursor():
+	if controlled_node.tilemap.get_block_on_cursor():
 		
+		var block = controlled_node.tilemap.get_block_on_cursor()
 		var equipped_item = controlled_node.hotbar.get_equipped_item()
+		var efficiency : float
 		if equipped_item is Inv_Tool:
-			controlled_node.tilemap.scrape_block(wrapper, equipped_item.mining)
-			return
+			efficiency =  equipped_item.mining
+		else:
+			efficiency = 1.0
 		
-		controlled_node.tilemap.scrape_block(wrapper, 1)
-		return
+		if block is Entity_Bock:
+			block.start_breaking_block(efficiency)
+			return
+		else:
+			controlled_node.tilemap.scrape_block(wrapper, efficiency)
+			return
 	wrapper["remaining_duration"] = null
 	state_machine.change_to("Hand_Swing")
 

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Crafting_recipes" load_steps=5 format=3 uid="uid://0w6wkhlnb0v6"]
+[gd_resource type="Resource" script_class="Crafting_recipes" load_steps=6 format=3 uid="uid://0w6wkhlnb0v6"]
 
 [ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="1_ob27e"]
 [ext_resource type="Resource" uid="uid://datb6n1nsw6in" path="res://Inventory/Items/Tool/Stone_Pickaxe.tres" id="2_354x1"]
 [ext_resource type="Resource" uid="uid://l8ov7b0s6m7" path="res://Inventory/Items/Block/Furnace_Block.tres" id="3_02h5f"]
+[ext_resource type="Resource" uid="uid://24x62cv84065" path="res://Inventory/Items/Block/Barrel_Block.tres" id="4_fytiu"]
 [ext_resource type="Script" path="res://autoloads/Recipes/Recipes.gd" id="4_wu1wg"]
 
 [resource]
 script = ExtResource("4_wu1wg")
-items = Array[Resource("res://Inventory/Items/Item.gd")]([ExtResource("1_ob27e"), ExtResource("2_354x1"), ExtResource("3_02h5f")])
+items = Array[Resource("res://Inventory/Items/Item.gd")]([ExtResource("1_ob27e"), ExtResource("2_354x1"), ExtResource("3_02h5f"), ExtResource("4_fytiu")])
