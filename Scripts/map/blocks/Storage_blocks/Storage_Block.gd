@@ -7,7 +7,7 @@ class_name Storage_Block
 
 func interact(body : Player):
 	var UI = inventory_UI.instantiate()
-	UI.inventory = inventory
+	UI.inventory = inventory.duplicate()
 	UI.father = body
 	body.crafting_menu.add_sibling(UI)
 	body.ui_state_machine.change_to("Inventory_open")

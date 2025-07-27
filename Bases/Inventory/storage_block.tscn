@@ -92,7 +92,7 @@ amount = 0
 script = ExtResource("4_wrfsk")
 amount = 0
 
-[sub_resource type="Resource" id="Resource_m6rx1"]
+[sub_resource type="Resource" id="Resource_6tjnr"]
 script = ExtResource("3_ibfuj")
 slots = Array[ExtResource("4_wrfsk")]([SubResource("Resource_i1wjt"), SubResource("Resource_pt7d3"), SubResource("Resource_51a3l"), SubResource("Resource_e2qqb"), SubResource("Resource_ybsp7"), SubResource("Resource_lvkhm"), SubResource("Resource_a8q4j"), SubResource("Resource_sv8t3"), SubResource("Resource_wfrrm"), SubResource("Resource_qx7x0"), SubResource("Resource_cpcca"), SubResource("Resource_rxodt"), SubResource("Resource_6msxk"), SubResource("Resource_hhs1s"), SubResource("Resource_65wy0"), SubResource("Resource_k57u1"), SubResource("Resource_vfp3d"), SubResource("Resource_b183x"), SubResource("Resource_7grxe"), SubResource("Resource_j8krv")])
 
@@ -102,7 +102,7 @@ radius = 48.0
 [node name="Storage_Block" instance=ExtResource("1_itve2")]
 collision_mask = 2
 script = ExtResource("2_bi66r")
-inventory = SubResource("Resource_m6rx1")
+inventory = SubResource("Resource_6tjnr")
 inventory_UI = ExtResource("7_bh7xk")
 hardness = 30.0
 drop = ExtResource("3_oqdwn")

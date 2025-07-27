@@ -1,8 +1,8 @@
 extends Control
 class_name Storage_UI
 
-var father : Player
-var inventory : Inventory
+var father : Player = null
+var inventory : Inventory = null
 
 @onready var ItemStackUIClass = preload("res://Inventory/panel_UI.tscn")
 @onready var slots : Array = $NinePatchRect/GridContainer.get_children()

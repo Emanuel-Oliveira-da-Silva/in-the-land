@@ -21,8 +21,3 @@ func process(delta):
 	if controlled_node.recipe_lvl != CraftingManager.get_crafting_lvl():
 		controlled_node.recipe_lvl = CraftingManager.get_crafting_lvl()
 		controlled_node.crafting_menu.update_recipes()
-
-func end():
-		for UI in $"../../CanvasLayer".get_children():
-			if UI is Storage_UI:
-				UI.queue_free()
