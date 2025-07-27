@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_ibfuj"]
 [ext_resource type="PackedScene" uid="uid://kla4h6prhbku" path="res://Inventory/Drops/Barrel_Block.tscn" id="3_oqdwn"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="4_wrfsk"]
-[ext_resource type="PackedScene" uid="uid://b2u4pivawcnhv" path="res://Scenes/UI/blocks/barrel_inventory_UI.tscn" id="5_fxysc"]
 [ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="5_rrwrb"]
 [ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="6_mtx8n"]
+[ext_resource type="PackedScene" uid="uid://71r83jmst6v1" path="res://Scenes/UI/blocks/barrel_UI.tscn" id="7_bh7xk"]
 
 [sub_resource type="Resource" id="Resource_i1wjt"]
 script = ExtResource("4_wrfsk")
@@ -103,7 +103,7 @@ radius = 48.0
 collision_mask = 2
 script = ExtResource("2_bi66r")
 inventory = SubResource("Resource_m6rx1")
-inventory_UI = ExtResource("5_fxysc")
+inventory_UI = ExtResource("7_bh7xk")
 hardness = 30.0
 drop = ExtResource("3_oqdwn")
 

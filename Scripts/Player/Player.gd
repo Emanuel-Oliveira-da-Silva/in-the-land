@@ -17,6 +17,8 @@ var animations : PlayerAnimations = PlayerAnimations.new()
 #UI
 @onready var canvas_layer : CanvasLayer = $CanvasLayer
 @onready var inventory_UI : Inventory_UI = $CanvasLayer/Inventory
+
+
 @onready var crafting_menu = $"CanvasLayer/Crafting Menu"
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var hotbar : Hotbar = $CanvasLayer/Hotbar

@@ -3,8 +3,6 @@ extends StateBase
 func start():
 	controlled_node.inventory_UI.visible = true
 	controlled_node.crafting_menu.visible = true
-	if $"../../CanvasLayer/Barrel_Inventory":
-		$"../../CanvasLayer/Barrel_Inventory".visible = true
 
 func unhandled_input(event):
 	if Input.is_action_just_pressed("Inventory") or Input.is_action_just_pressed("ui_cancel"):
@@ -25,5 +23,6 @@ func process(delta):
 		controlled_node.crafting_menu.update_recipes()
 
 func end():
-	if $"../../CanvasLayer/Barrel_Inventory":
-		$"../../CanvasLayer/Barrel_Inventory".queue_free()
+		for UI in $"../../CanvasLayer".get_children():
+			if UI is Storage_UI:
+				UI.queue_free()

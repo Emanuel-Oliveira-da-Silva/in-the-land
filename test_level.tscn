@@ -1,15 +1,110 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmwa3emyajfxb"]
+[gd_scene load_steps=33 format=3 uid="uid://dmwa3emyajfxb"]
 
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_fb2wb"]
 [ext_resource type="PackedScene" uid="uid://duq5pqriqt1xe" path="res://Scenes/Player/Player.tscn" id="2_h2yb2"]
 [ext_resource type="Script" path="res://Label.gd" id="2_u4d02"]
 [ext_resource type="PackedScene" uid="uid://o3ra0dm2jbyu" path="res://Scenes/Map/tile_map.tscn" id="3_jtwba"]
+[ext_resource type="Resource" uid="uid://24x62cv84065" path="res://Inventory/Items/Block/Barrel_Block.tres" id="3_vrukr"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="4_2w4ep"]
 [ext_resource type="PackedScene" uid="uid://cl3kejqvl6bak" path="res://Inventory/Drops/Rock_Block.tscn" id="5_lylfj"]
+[ext_resource type="Resource" uid="uid://dymstd5e6heo1" path="res://Inventory/Items/Block/Wood_Block.tres" id="5_oy1qj"]
 [ext_resource type="PackedScene" uid="uid://bg0r2au5jme05" path="res://Inventory/Drops/Dirt_Block.tscn" id="6_ccc6f"]
+[ext_resource type="Resource" uid="uid://bs6uiigxirkb7" path="res://Inventory/Items/Block/Rock_Block.tres" id="6_pj0h6"]
+[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="7_x0dyx"]
+
+[sub_resource type="Resource" id="Resource_ehpd6"]
+script = ExtResource("4_2w4ep")
+item = ExtResource("3_vrukr")
+amount = 1
+
+[sub_resource type="Resource" id="Resource_80v45"]
+script = ExtResource("4_2w4ep")
+item = ExtResource("5_oy1qj")
+amount = 64
+
+[sub_resource type="Resource" id="Resource_1s7w8"]
+script = ExtResource("4_2w4ep")
+item = ExtResource("6_pj0h6")
+amount = 64
+
+[sub_resource type="Resource" id="Resource_i5fkm"]
+script = ExtResource("4_2w4ep")
+item = ExtResource("7_x0dyx")
+amount = 20
+
+[sub_resource type="Resource" id="Resource_6cvqo"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_hsiwf"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_p42k3"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ru1so"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vcqb7"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_sorda"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_8t1dq"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vg0pa"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_u5gw0"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_mpuh2"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_xwo1p"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_bdbif"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_d2gxy"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_1kj1u"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_v733u"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vlq60"]
+script = ExtResource("4_2w4ep")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_3p1ge"]
+script = ExtResource("2_fb2wb")
+slots = Array[ExtResource("4_2w4ep")]([SubResource("Resource_ehpd6"), SubResource("Resource_80v45"), SubResource("Resource_1s7w8"), SubResource("Resource_i5fkm"), SubResource("Resource_6cvqo"), SubResource("Resource_hsiwf"), SubResource("Resource_p42k3"), SubResource("Resource_ru1so"), SubResource("Resource_vcqb7"), SubResource("Resource_sorda"), SubResource("Resource_8t1dq"), SubResource("Resource_vg0pa"), SubResource("Resource_u5gw0"), SubResource("Resource_mpuh2"), SubResource("Resource_xwo1p"), SubResource("Resource_bdbif"), SubResource("Resource_d2gxy"), SubResource("Resource_1kj1u"), SubResource("Resource_v733u"), SubResource("Resource_vlq60")])
 
 [node name="test_level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_h2yb2")]
 position = Vector2(497, 125)
+inventory = SubResource("Resource_3p1ge")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)

@@ -2,11 +2,11 @@ extends Control
 class_name Inventory_UI
 
 @onready var father = self.owner
-var inventory : Inventory
+@onready var inventory : Inventory =  self.owner.inventory
 
 @onready var ItemStackUIClass = preload("res://Inventory/panel_UI.tscn")
-var hotbar_slots : Array
-var slots : Array 
+@onready var hotbar_slots : Array = $"../Hotbar".slots
+@onready var slots : Array = hotbar_slots + $NinePatchRect/GridContainer.get_children()
 
 var item_in_hand : Item_Stack_UI
 var oldIndex: int = -1
@@ -14,9 +14,9 @@ var locked = false
 
 
 func _ready():
-	inventory =  self.owner.inventory
-	hotbar_slots = $"../Hotbar".slots
-	slots = hotbar_slots + $NinePatchRect/GridContainer.get_children()
+	connect_inventory()
+
+func connect_inventory():
 	connect_Slots()
 	inventory.updated.connect(update)
 	update()

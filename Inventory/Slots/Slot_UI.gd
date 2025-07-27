@@ -3,7 +3,7 @@ class_name Slot_UI
 
 @onready var center_container = $CenterContainer
 
-@onready var inventory_UI : Inventory_UI = $"../../.."
+@onready var inventory_UI = $"../../.."
 
 
 var item_stack_ui : Item_Stack_UI

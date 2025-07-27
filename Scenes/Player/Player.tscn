@@ -1,14 +1,10 @@
-[gd_scene load_steps=118 format=3 uid="uid://duq5pqriqt1xe"]
+[gd_scene load_steps=93 format=3 uid="uid://duq5pqriqt1xe"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_tak2d"]
-[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_qbu3u"]
 [ext_resource type="Texture2D" uid="uid://c14f6yarh3kvi" path="res://Assets/Player/Hoodie Character.png" id="2_v1heh"]
-[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_bvluy"]
 [ext_resource type="PackedScene" uid="uid://o2h67bx0dmp3" path="res://Bases/State Machines/state_machine.tscn" id="3_m2utd"]
 [ext_resource type="Script" path="res://State Machines/Player/Idle.gd" id="4_m0t4p"]
-[ext_resource type="Resource" uid="uid://24x62cv84065" path="res://Inventory/Items/Block/Barrel_Block.tres" id="5_nkirs"]
 [ext_resource type="Script" path="res://State Machines/Player/Walking.gd" id="5_pgwf0"]
-[ext_resource type="Resource" uid="uid://beldc7rhqhw35" path="res://Inventory/Items/Tool/Wooden_Pickaxe.tres" id="5_sd0ru"]
 [ext_resource type="Script" path="res://State Machines/Player/Running.gd" id="6_8kfn4"]
 [ext_resource type="Script" path="res://State Machines/Player/Hand_Mine.gd" id="6_g4qdx"]
 [ext_resource type="Script" path="res://State Machines/Player/Jump.gd" id="7_qbvkg"]
@@ -25,92 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bos7m72us7ng7" path="res://Inventory/hotbar.tscn" id="21_v452b"]
 [ext_resource type="PackedScene" uid="uid://cumlhqltekqjp" path="res://Scenes/UI/Crafting_menu.tscn" id="23_lrvww"]
 [ext_resource type="PackedScene" uid="uid://bl8x0aaf27hv2" path="res://Scenes/Interaction/Interaction_Area.tscn" id="24_yvjvd"]
-
-[sub_resource type="Resource" id="Resource_byydd"]
-script = ExtResource("3_bvluy")
-item = ExtResource("5_sd0ru")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_t1fi3"]
-script = ExtResource("3_bvluy")
-item = ExtResource("5_nkirs")
-amount = 1
-
-[sub_resource type="Resource" id="Resource_ff60i"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_i4t8b"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_tgf5f"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_ligl2"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_t8m1p"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_mgagp"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_r8pey"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_d771h"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_2vq7d"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_u6xyy"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_mmc5x"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_hftny"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_k5kmr"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_0vtp2"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_w8wfo"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_yag7a"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_b6jnb"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_00pgn"]
-script = ExtResource("3_bvluy")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_rq0bc"]
-script = ExtResource("2_qbu3u")
-slots = Array[ExtResource("3_bvluy")]([SubResource("Resource_byydd"), SubResource("Resource_t1fi3"), SubResource("Resource_ff60i"), SubResource("Resource_i4t8b"), SubResource("Resource_tgf5f"), SubResource("Resource_ligl2"), SubResource("Resource_t8m1p"), SubResource("Resource_mgagp"), SubResource("Resource_r8pey"), SubResource("Resource_d771h"), SubResource("Resource_2vq7d"), SubResource("Resource_u6xyy"), SubResource("Resource_mmc5x"), SubResource("Resource_hftny"), SubResource("Resource_k5kmr"), SubResource("Resource_0vtp2"), SubResource("Resource_w8wfo"), SubResource("Resource_yag7a"), SubResource("Resource_b6jnb"), SubResource("Resource_00pgn")])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlh36"]
 atlas = ExtResource("2_v1heh")
@@ -957,7 +867,6 @@ radius = 37.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_tak2d")
-inventory = SubResource("Resource_rq0bc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3u4rw")
@@ -1024,7 +933,6 @@ script = ExtResource("15_1s8md")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Crafting Menu" parent="CanvasLayer" instance=ExtResource("23_lrvww")]
-visible = false
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("21_v452b")]
 offset_left = 25.0
@@ -1033,7 +941,6 @@ offset_right = 351.0
 offset_bottom = 81.0
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("17_671f1")]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
