@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ct0msxs3cmi57"]
+[gd_scene load_steps=30 format=3 uid="uid://ct0msxs3cmi57"]
 
 [ext_resource type="PackedScene" uid="uid://cbqn24tk2tihe" path="res://Bases/Inventory/Entity_Block.tscn" id="1_itve2"]
 [ext_resource type="Script" path="res://Scripts/map/blocks/Storage_blocks/Storage_Block.gd" id="2_bi66r"]
@@ -6,95 +6,71 @@
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_ibfuj"]
 [ext_resource type="PackedScene" uid="uid://kla4h6prhbku" path="res://Inventory/Drops/Barrel_Block.tscn" id="3_oqdwn"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="4_wrfsk"]
-[ext_resource type="Resource" uid="uid://bf6xlhxmltha5" path="res://Inventory/Items/Block/Dirt_Block.tres" id="5_rrwrb"]
-[ext_resource type="Resource" uid="uid://c2hgmnjk3pcy3" path="res://Inventory/Items/Block/Plank_Block.tres" id="6_mtx8n"]
 [ext_resource type="PackedScene" uid="uid://71r83jmst6v1" path="res://Scenes/UI/blocks/barrel_UI.tscn" id="7_bh7xk"]
 
-[sub_resource type="Resource" id="Resource_i1wjt"]
+[sub_resource type="Resource" id="Resource_m4spb"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_pt7d3"]
+[sub_resource type="Resource" id="Resource_nxsv6"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_51a3l"]
+[sub_resource type="Resource" id="Resource_7hcuu"]
 script = ExtResource("4_wrfsk")
-item = ExtResource("5_rrwrb")
-amount = 5
 
-[sub_resource type="Resource" id="Resource_e2qqb"]
+[sub_resource type="Resource" id="Resource_oquu3"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_ybsp7"]
+[sub_resource type="Resource" id="Resource_l6774"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_lvkhm"]
+[sub_resource type="Resource" id="Resource_2lons"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_a8q4j"]
+[sub_resource type="Resource" id="Resource_sxr8u"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_sv8t3"]
+[sub_resource type="Resource" id="Resource_lxsbu"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_wfrrm"]
+[sub_resource type="Resource" id="Resource_pnhwx"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_qx7x0"]
+[sub_resource type="Resource" id="Resource_q2tqb"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_cpcca"]
+[sub_resource type="Resource" id="Resource_td6yt"]
 script = ExtResource("4_wrfsk")
-item = ExtResource("6_mtx8n")
-amount = 32
 
-[sub_resource type="Resource" id="Resource_rxodt"]
+[sub_resource type="Resource" id="Resource_rrywa"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_6msxk"]
+[sub_resource type="Resource" id="Resource_74s66"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_hhs1s"]
+[sub_resource type="Resource" id="Resource_i5tn6"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_65wy0"]
+[sub_resource type="Resource" id="Resource_v4d1s"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_k57u1"]
+[sub_resource type="Resource" id="Resource_wd1qe"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_vfp3d"]
+[sub_resource type="Resource" id="Resource_oopno"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_b183x"]
+[sub_resource type="Resource" id="Resource_00q0s"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_7grxe"]
+[sub_resource type="Resource" id="Resource_kglgf"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_j8krv"]
+[sub_resource type="Resource" id="Resource_6yilr"]
 script = ExtResource("4_wrfsk")
-amount = 0
 
-[sub_resource type="Resource" id="Resource_6tjnr"]
+[sub_resource type="Resource" id="Resource_gtrcv"]
 script = ExtResource("3_ibfuj")
-slots = Array[ExtResource("4_wrfsk")]([SubResource("Resource_i1wjt"), SubResource("Resource_pt7d3"), SubResource("Resource_51a3l"), SubResource("Resource_e2qqb"), SubResource("Resource_ybsp7"), SubResource("Resource_lvkhm"), SubResource("Resource_a8q4j"), SubResource("Resource_sv8t3"), SubResource("Resource_wfrrm"), SubResource("Resource_qx7x0"), SubResource("Resource_cpcca"), SubResource("Resource_rxodt"), SubResource("Resource_6msxk"), SubResource("Resource_hhs1s"), SubResource("Resource_65wy0"), SubResource("Resource_k57u1"), SubResource("Resource_vfp3d"), SubResource("Resource_b183x"), SubResource("Resource_7grxe"), SubResource("Resource_j8krv")])
+slots = Array[ExtResource("4_wrfsk")]([SubResource("Resource_m4spb"), SubResource("Resource_nxsv6"), SubResource("Resource_7hcuu"), SubResource("Resource_oquu3"), SubResource("Resource_l6774"), SubResource("Resource_2lons"), SubResource("Resource_sxr8u"), SubResource("Resource_lxsbu"), SubResource("Resource_pnhwx"), SubResource("Resource_q2tqb"), SubResource("Resource_td6yt"), SubResource("Resource_rrywa"), SubResource("Resource_74s66"), SubResource("Resource_i5tn6"), SubResource("Resource_v4d1s"), SubResource("Resource_wd1qe"), SubResource("Resource_oopno"), SubResource("Resource_00q0s"), SubResource("Resource_kglgf"), SubResource("Resource_6yilr")])
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eufek"]
 radius = 48.0
@@ -102,7 +78,7 @@ radius = 48.0
 [node name="Storage_Block" instance=ExtResource("1_itve2")]
 collision_mask = 2
 script = ExtResource("2_bi66r")
-inventory = SubResource("Resource_6tjnr")
+inventory = SubResource("Resource_gtrcv")
 inventory_UI = ExtResource("7_bh7xk")
 hardness = 30.0
 drop = ExtResource("3_oqdwn")

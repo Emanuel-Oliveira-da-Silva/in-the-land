@@ -2,6 +2,7 @@ extends Control
 class_name Storage_UI
 
 var father : Player = null
+var origin_block = null
 var inventory : Inventory = null
 
 @onready var ItemStackUIClass = preload("res://Inventory/panel_UI.tscn")
@@ -135,3 +136,7 @@ func put_item_back():
 func right_click():
 	if father.inventory_UI.item_in_hand:
 		put_item_back()
+
+func close():
+	origin_block.inventory = self.inventory
+	self.queue_free()

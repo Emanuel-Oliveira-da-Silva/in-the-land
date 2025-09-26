@@ -3,7 +3,7 @@ extends StateBase
 func start():
 	for UI in $"../../CanvasLayer".get_children():
 		if UI is Storage_UI:
-			UI.queue_free()
+			UI.close()
 	controlled_node.hotbar.visible = true
 	controlled_node.inventory_UI.locked = true
 	controlled_node.inventory_UI.put_item_back()

@@ -9,11 +9,13 @@ func interact(body : Player):
 	var UI = inventory_UI.instantiate()
 	UI.inventory = inventory.duplicate()
 	UI.father = body
+	UI.origin_block = self
 	body.crafting_menu.add_sibling(UI)
 	body.ui_state_machine.change_to("Inventory_open")
 
 func _on_area_2d_body_exited(body : Player):
 	for UI in body.canvas_layer.get_children():
 		if UI is Storage_UI:
+			self.inventory = UI.inventory
 			UI.queue_free()
 			return
