@@ -130,8 +130,9 @@ func put_item_back():
 	var targetSlot = slots[oldIndex]
 	
 	var tween = create_tween()
-	var targetPosition = targetSlot.global_position + targetSlot.size / 2
-	tween.tween_property(item_in_hand, "global_position", targetPosition, 0.2)
+	if tween:
+		var targetPosition = targetSlot.global_position + targetSlot.size / 2
+		tween.tween_property(item_in_hand, "global_position", targetPosition, 0.2)
 	
 	await tween.finished
 	

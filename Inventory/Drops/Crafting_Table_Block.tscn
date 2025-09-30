@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://drxrsh76n2f0m"]
 
-[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_drop.tscn" id="1_1xna6"]
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Scenes/Map/Base_drop.tscn" id="1_1xna6"]
 [ext_resource type="Resource" uid="uid://dxrig35wnu7lj" path="res://Inventory/Items/Block/Crafting_Table_Block.tres" id="2_ak0q2"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_mol6q"]
 

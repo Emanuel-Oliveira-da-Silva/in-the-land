@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://2g3m610cledp"]
+
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="1_ykhkj"]
+[ext_resource type="PackedScene" uid="uid://2jeve6ulfqj" path="res://Inventory/Slots/Slot_UI.tscn" id="2_kdhrc"]
+[ext_resource type="Texture2D" uid="uid://8eo2ls5qjfdf" path="res://Assets/UI/Tiles/Small tiles/Thick outline/tile_0069.png" id="3_bbhl2"]
+[ext_resource type="Texture2D" uid="uid://cr3kfeervg7hh" path="res://Assets/UI/Tiles/Small tiles/Thick outline/tile_0070.png" id="4_bsk7f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kugv"]
+atlas = ExtResource("1_ykhkj")
+region = Rect2(208, 32, 16, 16)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -194.0
+offset_right = -54.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_3kugv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VFlowContainer" type="VFlowContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -79.0
+offset_right = 31.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Slot" parent="TextureRect/VFlowContainer" instance=ExtResource("2_kdhrc")]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="TextureRect/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+fill_mode = 3
+texture_over = ExtResource("3_bbhl2")
+texture_progress = ExtResource("4_bsk7f")
+
+[node name="Slot2" parent="TextureRect/VFlowContainer" instance=ExtResource("2_kdhrc")]
+layout_mode = 2
+
+[node name="Slot3" parent="TextureRect/VFlowContainer" instance=ExtResource("2_kdhrc")]
+layout_mode = 2

@@ -27,3 +27,7 @@ name = "Stick"
 texture = SubResource("AtlasTexture_jrevk")
 stack = 64
 recipe = SubResource("Resource_ko47k")
+cookable = false
+cook_time = 0.0
+is_fuel = false
+fuel = 0

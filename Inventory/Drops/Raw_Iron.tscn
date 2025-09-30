@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq8w4uh7q6rki"]
 
-[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Bases/Inventory/Base_drop.tscn" id="1_50d5g"]
+[ext_resource type="PackedScene" uid="uid://l11g557p4ji4" path="res://Scenes/Map/Base_drop.tscn" id="1_50d5g"]
 [ext_resource type="Resource" uid="uid://bdsef03m8gw2x" path="res://Inventory/Items/Resources/Raw_Iron.tres" id="2_ievin"]
 [ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_0vrjj"]
 [ext_resource type="Texture2D" uid="uid://d08p3gtdtxpxm" path="res://Assets/all Items/items_sheet.png" id="4_whrfu"]

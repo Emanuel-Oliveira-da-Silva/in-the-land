@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbqn24tk2tihe"]
 
-[ext_resource type="Script" path="res://Scripts/map/blocks/Entity_Block.gd" id="1_uwg85"]
+[ext_resource type="Script" path="res://Scripts/map/blocks/Entity_Block.gd" id="1_ubj6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sp15k"]
 size = Vector2(16, 16)
 
 [node name="Entity_block" type="StaticBody2D"]
 input_pickable = true
-script = ExtResource("1_uwg85")
+script = ExtResource("1_ubj6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 region_enabled = true

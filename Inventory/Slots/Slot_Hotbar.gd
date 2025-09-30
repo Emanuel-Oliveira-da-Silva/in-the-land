@@ -29,8 +29,9 @@ func take_item():
 	return item
 
 func erase_item():
-	container.remove_child(item_stack_ui)
-	item_stack_ui = null
+	if container:
+		container.remove_child(item_stack_ui)
+		item_stack_ui = null
 
 func is_empty():
 	return !item_stack_ui

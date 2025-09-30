@@ -12,3 +12,7 @@ script = ExtResource("1_eo7wv")
 name = "Coal"
 texture = SubResource("AtlasTexture_lipnk")
 stack = 72
+cookable = false
+cook_time = 0.0
+is_fuel = false
+fuel = 0

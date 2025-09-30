@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkkc56cvykkt" path="res://Inventory/Drops/Wood_Block.tscn" id="4_j50sv"]
 [ext_resource type="PackedScene" uid="uid://bq8w4uh7q6rki" path="res://Inventory/Drops/Raw_Iron.tscn" id="4_mm3uy"]
 [ext_resource type="PackedScene" uid="uid://binkuygd7v2an" path="res://Scenes/Interaction/Crafting_Area_Block.tscn" id="6_5dvek"]
-[ext_resource type="PackedScene" uid="uid://ct0msxs3cmi57" path="res://Bases/Inventory/storage_block.tscn" id="11_enrm8"]
+[ext_resource type="PackedScene" uid="uid://bkx2gga2ya1ik" path="res://Scenes/Map/Blocks/Barrel_block.tscn" id="11_0pqpi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggggr"]
 texture = ExtResource("1_gyfom")
@@ -852,7 +852,7 @@ texture = ExtResource("1_gyfom")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sit08"]
 resource_name = "Bloques especiales"
-scenes/0/scene = ExtResource("11_enrm8")
+scenes/0/scene = ExtResource("11_0pqpi")
 
 [sub_resource type="TileSet" id="TileSet_n4qpm"]
 physics_layer_0/collision_layer = 1

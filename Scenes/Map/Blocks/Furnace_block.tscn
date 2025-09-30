@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://dixwtjgktb4mh"]
+
+[ext_resource type="PackedScene" uid="uid://ct0msxs3cmi57" path="res://Bases/map/storage_block.tscn" id="1_0xdxr"]
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="2_nru6d"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="3_1d86k"]
+[ext_resource type="PackedScene" uid="uid://djkgblsctq7ig" path="res://Inventory/Drops/Furnace_Block.tscn" id="4_4mu5x"]
+[ext_resource type="Texture2D" uid="uid://c11odl0iuu1r7" path="res://Assets/all Blocks/terrain (20).png" id="5_5u13g"]
+
+[sub_resource type="Resource" id="Resource_vsehe"]
+script = ExtResource("3_1d86k")
+
+[sub_resource type="Resource" id="Resource_a5nyy"]
+script = ExtResource("3_1d86k")
+
+[sub_resource type="Resource" id="Resource_0qddk"]
+script = ExtResource("3_1d86k")
+
+[sub_resource type="Resource" id="Resource_ejm8q"]
+script = ExtResource("2_nru6d")
+slots = Array[ExtResource("3_1d86k")]([SubResource("Resource_vsehe"), SubResource("Resource_a5nyy"), SubResource("Resource_0qddk")])
+
+[node name="Furnace_Block" instance=ExtResource("1_0xdxr")]
+inventory = SubResource("Resource_ejm8q")
+hardness = 100.0
+drop = ExtResource("4_4mu5x")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("5_5u13g")
+hframes = 2
+vframes = 2
+region_rect = Rect2(192, 32, 32, 32)

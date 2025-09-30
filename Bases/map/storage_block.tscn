@@ -1,0 +1,92 @@
+[gd_scene load_steps=29 format=3 uid="uid://ct0msxs3cmi57"]
+
+[ext_resource type="PackedScene" uid="uid://cbqn24tk2tihe" path="res://Bases/map/Entity_Block.tscn" id="1_bgbgu"]
+[ext_resource type="Script" path="res://Scripts/map/blocks/Storage_blocks/Storage_Block.gd" id="2_s2un7"]
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_7b0wl"]
+[ext_resource type="Script" path="res://Inventory/Slots/Inv_Slot.gd" id="4_nrklh"]
+[ext_resource type="PackedScene" uid="uid://71r83jmst6v1" path="res://Scenes/UI/blocks/barrel_UI.tscn" id="5_27d83"]
+[ext_resource type="PackedScene" uid="uid://kla4h6prhbku" path="res://Inventory/Drops/Barrel_Block.tscn" id="6_ykuu7"]
+
+[sub_resource type="Resource" id="Resource_m4spb"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_nxsv6"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_7hcuu"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_oquu3"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_l6774"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_2lons"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_sxr8u"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_lxsbu"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_pnhwx"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_q2tqb"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_td6yt"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_rrywa"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_74s66"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_i5tn6"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_v4d1s"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_wd1qe"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_oopno"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_00q0s"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_kglgf"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_6yilr"]
+script = ExtResource("4_nrklh")
+
+[sub_resource type="Resource" id="Resource_gtrcv"]
+script = ExtResource("3_7b0wl")
+slots = Array[ExtResource("4_nrklh")]([SubResource("Resource_m4spb"), SubResource("Resource_nxsv6"), SubResource("Resource_7hcuu"), SubResource("Resource_oquu3"), SubResource("Resource_l6774"), SubResource("Resource_2lons"), SubResource("Resource_sxr8u"), SubResource("Resource_lxsbu"), SubResource("Resource_pnhwx"), SubResource("Resource_q2tqb"), SubResource("Resource_td6yt"), SubResource("Resource_rrywa"), SubResource("Resource_74s66"), SubResource("Resource_i5tn6"), SubResource("Resource_v4d1s"), SubResource("Resource_wd1qe"), SubResource("Resource_oopno"), SubResource("Resource_00q0s"), SubResource("Resource_kglgf"), SubResource("Resource_6yilr")])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eufek"]
+radius = 48.0
+
+[node name="Storage_Block" instance=ExtResource("1_bgbgu")]
+collision_mask = 2
+script = ExtResource("2_s2un7")
+inventory = SubResource("Resource_gtrcv")
+inventory_UI = ExtResource("5_27d83")
+hardness = 30.0
+drop = ExtResource("6_ykuu7")
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_eufek")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

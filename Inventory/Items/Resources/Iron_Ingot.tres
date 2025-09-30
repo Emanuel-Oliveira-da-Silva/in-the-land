@@ -33,3 +33,7 @@ name = "Iron Ingot"
 texture = SubResource("AtlasTexture_jn7tb")
 stack = 72
 recipe = SubResource("Resource_yr7su")
+cookable = false
+cook_time = 0.0
+is_fuel = false
+fuel = 0
